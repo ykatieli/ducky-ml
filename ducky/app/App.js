@@ -9,6 +9,9 @@ import { createStackNavigator } from '@react-navigation/stack';
 
 import Home from './screens/Home';
 import Journal from './screens/Journal';
+import HabitTracker from './screens/HabitTracker';
+import Analytics from './screens/Analytics';
+import Ducky from './screens/Ducky';
 
 const Stack = createStackNavigator();
 
@@ -30,6 +33,18 @@ export default class App extends Component {
           <Stack.Screen
             name="JournalScreen"
             component={Journal}
+          />
+          <Stack.Screen
+            name="HabitTrackerScreen"
+            component={HabitTracker}
+          />
+          <Stack.Screen
+            name="AnalyticsScreen"
+            component={Analytics}
+          />
+          <Stack.Screen
+            name="DuckyScreen"
+            component={Ducky}
           />
         </Stack.Navigator>
       </NavigationContainer>

@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import { View, Text, StyleSheet, Button } from 'react-native';
 
-export class Journal extends Component {
+export class Ducky extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.h4_white}>This is the journal screen</Text>
+        <Text style={styles.h4_white}>This is the Ducky screen</Text>
         
         {/* Dock */}
         <View style={styles.dock_container}>
@@ -23,7 +23,7 @@ export class Journal extends Component {
   }
 }
 
-export default Journal;
+export default Ducky;
 
 const styles = StyleSheet.create({
   container: {

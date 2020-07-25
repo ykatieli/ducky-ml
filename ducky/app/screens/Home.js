@@ -4,10 +4,11 @@ import { LinearGradient } from 'expo-linear-gradient';
 // import { Icon, InlineIcon } from '@iconify/react';
 // import personCircle from '@iconify/icons-bi/person-circle';
 
+
 export class Home extends Component {
   render() {
     return (
-      <View style={styles.container}>
+      <LinearGradient colors={['#AEC9EB', 'rgba(174, 201, 235, 0.75)']} style={styles.container}>
 
         {/* <Icon icon={personCircle} style={{color: '#fff'}} /> */}
 
@@ -27,21 +28,21 @@ export class Home extends Component {
           {/* Daily Check In */}
           <LinearGradient colors={['#ffffff', '#fbfbfb']} style={styles.cards} >
             <View style={{alignItems: 'center', paddingTop: 30}}>
-              <Text style={styles.h4_blue}>Daily Check In</Text>
+              <Text style={styles.h3_blue}>Daily Check In</Text>
             </View>
           </LinearGradient>
           
           {/* Daily Habits */}
           <LinearGradient colors={['#ffffff', '#fbfbfb']} style={styles.cards} >
             <View style={{alignItems: 'center', paddingTop: 30}}>
-              <Text style={styles.h4_blue}>Daily Habits</Text>
+              <Text style={styles.h3_blue}>Daily Habits</Text>
             </View>
           </LinearGradient>
 
           {/* Memories */}
           <LinearGradient colors={['#ffffff', '#fbfbfb']} style={styles.cards} >
             <View style={{alignItems: 'center', paddingTop: 30}}>
-              <Text style={styles.h4_blue}>Memories</Text>
+              <Text style={styles.h3_blue}>Memories</Text>
             </View>
           </LinearGradient>
             
@@ -49,8 +50,18 @@ export class Home extends Component {
       
         </View>
 
-        <Button onPress={() => this.props.navigation.navigate('JournalScreen')} title="Journal"/>
-      </View>
+        {/* Dock */}
+        <View style={styles.dock_container}>
+          <View style={styles.dock}>
+            <Button onPress={() => this.props.navigation.navigate('HomeScreen')} title="Home"/>
+            <Button onPress={() => this.props.navigation.navigate('HabitTrackerScreen')} title="Habit Tracker"/>
+            <Button onPress={() => this.props.navigation.navigate('DuckyScreen')} title="Ducky"/>
+            <Button onPress={() => this.props.navigation.navigate('JournalScreen')} title="Journal"/>
+            <Button onPress={() => this.props.navigation.navigate('AnalyticsScreen')} title="Analytics"/>
+          </View>
+        </View>
+        
+      </LinearGradient>
     )
   }
 }
@@ -66,7 +77,7 @@ const styles = StyleSheet.create({
     // justifyContent: 'center',
   },
   h5_white: {
-    color: '#fbfbfb',
+    color: '#fbfbfb', 
     fontSize: 45,
     fontWeight: 'bold'
   },
@@ -81,10 +92,30 @@ const styles = StyleSheet.create({
     borderRadius: 20,
     margin: 10
   },
-  h4_blue: {
+  h3_blue: {
     color: '#6B8DB2',
     fontStyle: 'normal',
     fontSize: 25,
     fontWeight: '600',
+  },
+  dock_container: {
+    width: 414, 
+    height: 100, 
+    backgroundColor: '#AEC9EB', 
+    position: 'absolute', 
+    bottom: 0,
+    flex: 1,
+    alignContent: 'center',
+    justifyContent: 'center'
+  },
+  dock: {
+    flexDirection: 'row',
+    justifyContent: 'space-evenly',
+  },
+  h4_white: {
+    color: '#FBFBFB',
+    fontStyle: 'normal',
+    fontSize: 40,
+    fontWeight: 'bold',
   }
 });

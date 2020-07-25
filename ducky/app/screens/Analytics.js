@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import { View, Text, StyleSheet, Button } from 'react-native';
+import { LinearGradient } from 'expo-linear-gradient';
 
-export class Journal extends Component {
+export class Analytics extends Component {
   render() {
     return (
-      <View style={styles.container}>
-        <Text style={styles.h4_white}>This is the journal screen</Text>
-        
+      <LinearGradient style={styles.container} colors={['#6B8DB2', '#7998B9']}>
+        <Text style={styles.h4_white}>This is the analytics screen</Text>
+       
         {/* Dock */}
         <View style={styles.dock_container}>
           <View style={styles.dock}>
@@ -18,12 +19,12 @@ export class Journal extends Component {
           </View>
         </View>
 
-      </View>
+      </LinearGradient>
     )
   }
 }
 
-export default Journal;
+export default Analytics;
 
 const styles = StyleSheet.create({
   container: {
