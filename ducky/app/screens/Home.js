@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import { View, Text, StyleSheet, Button } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
-// import { Icon, InlineIcon } from '@iconify/react';
-// import personCircle from '@iconify/icons-bi/person-circle';
+import { AntDesign, MaterialIcons, Feather, MaterialCommunityIcons, FontAwesome } from '@expo/vector-icons';
 
 
 export class Home extends Component {
@@ -10,7 +9,8 @@ export class Home extends Component {
     return (
       <LinearGradient colors={['#AEC9EB', 'rgba(174, 201, 235, 0.75)']} style={styles.container}>
 
-        {/* <Icon icon={personCircle} style={{color: '#fff'}} /> */}
+        {/* Profile icon */}
+        <MaterialCommunityIcons name="account-circle" size={50} color="#fff" style={styles.profile_icon}/>
 
         {/* Good morning, Haley! */}
         <View style={{paddingLeft: 30}}>
@@ -27,7 +27,7 @@ export class Home extends Component {
 
           {/* Daily Check In */}
           <LinearGradient colors={['#ffffff', '#fbfbfb']} style={styles.cards} >
-            <View style={{alignItems: 'center', paddingTop: 30}}>
+            <View style={{alignItems: 'center', paddingTop: 30, }}>
               <Text style={styles.h3_blue}>Daily Check In</Text>
             </View>
           </LinearGradient>
@@ -53,11 +53,11 @@ export class Home extends Component {
         {/* Dock */}
         <View style={styles.dock_container}>
           <View style={styles.dock}>
-            <Button onPress={() => this.props.navigation.navigate('HomeScreen')} title="Home"/>
-            <Button onPress={() => this.props.navigation.navigate('HabitTrackerScreen')} title="Habit Tracker"/>
-            <Button onPress={() => this.props.navigation.navigate('DuckyScreen')} title="Ducky"/>
-            <Button onPress={() => this.props.navigation.navigate('JournalScreen')} title="Journal"/>
-            <Button onPress={() => this.props.navigation.navigate('AnalyticsScreen')} title="Analytics"/>
+            <Feather name="home" size={50} color="#FFFFFF" onPress={() => this.props.navigation.navigate('HomeScreen')} />
+            <MaterialCommunityIcons name="calendar-check-outline" size={50} color="#FFFFFF" onPress={() => this.props.navigation.navigate('HabitTrackerScreen')} />
+            <MaterialCommunityIcons name="duck" size={50} color="#FFFFFF" onPress={() => this.props.navigation.navigate('DuckyScreen')} />
+            <FontAwesome name="pencil-square-o" size={50} color="#FFFFFF" onPress={() => this.props.navigation.navigate('JournalScreen')} />
+            <AntDesign name="areachart" size={50} color="#FFFFFF" onPress={() => this.props.navigation.navigate('AnalyticsScreen')} />
           </View>
         </View>
         
@@ -76,6 +76,28 @@ const styles = StyleSheet.create({
     // alignItems: 'center',
     // justifyContent: 'center',
   },
+  profile_icon: {
+    position: 'absolute', 
+    right: 0, 
+    paddingTop: 50, 
+    paddingRight: 30,
+    shadowColor: '#718399',
+    shadowOpacity: 0.5,
+    shadowRadius: 4,
+    shadowOffset: {
+      width: 2,
+      height: 2
+    },
+  },
+  shadow_icon: {
+    shadowColor: '#718399',
+    shadowOpacity: 0.5,
+    shadowRadius: 4,
+    shadowOffset: {
+      width: 2,
+      height: 2
+    }
+  },
   h5_white: {
     color: '#fbfbfb', 
     fontSize: 45,
@@ -90,7 +112,7 @@ const styles = StyleSheet.create({
     width: 300,
     height: 450,
     borderRadius: 20,
-    margin: 10
+    margin: 10,
   },
   h3_blue: {
     color: '#6B8DB2',
