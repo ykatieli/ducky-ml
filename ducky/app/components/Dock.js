@@ -1,4 +1,4 @@
-// Ducky.js
+// Dock.js
 
 import React, { Component } from 'react';
 import { View, Text, Button } from 'react-native';
@@ -7,12 +7,10 @@ import { AntDesign, Feather, MaterialCommunityIcons, FontAwesome } from '@expo/v
 
 import styles from '../Styles';
 
-export class Ducky extends Component {
+export class Dock extends Component {
   render() {
     return (
-      <View style={styles.container}>
-        <Text style={styles.h4_white}>This is the Ducky screen</Text>
-        
+      <View>
         {/* Dock */}
         <View style={styles.dock_container}>
           <View style={styles.dock}>
@@ -23,10 +21,9 @@ export class Ducky extends Component {
             <AntDesign name="areachart" size={50} color="#FFFFFF" onPress={() => this.props.navigation.navigate('AnalyticsScreen')} />
           </View>
         </View>
-
       </View>
     )
   }
 }
 
-export default Ducky;
+export default Dock;
