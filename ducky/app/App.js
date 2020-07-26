@@ -12,6 +12,7 @@ import Journal from './screens/Journal';
 import HabitTracker from './screens/HabitTracker';
 import Analytics from './screens/Analytics';
 import Ducky from './screens/Ducky';
+import Dock from './components/Dock';
 
 const Stack = createStackNavigator();
 
@@ -22,10 +23,6 @@ export default class App extends Component {
          <Stack.Navigator 
           initialRouteName="Home"
           screenOptions={{ headerShown: false}}>
-          {/* <Stack.Screen
-            name="Onboarding1"
-            component={Onboarding1Screen}
-          /> */}
           <Stack.Screen
             name="HomeScreen"
             component={Home}

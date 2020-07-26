@@ -1,3 +1,5 @@
+// Home.js
+
 import React, { Component } from 'react';
 import { View, Text, Button } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
@@ -51,6 +53,7 @@ export class Home extends Component {
         </View>
 
         {/* Dock */}
+        {/* <Dock></Dock>         */}
         <View style={styles.dock_container}>
           <View style={styles.dock}>
             <Feather name="home" size={50} color="#FFFFFF" onPress={() => this.props.navigation.navigate('HomeScreen')} />
@@ -60,7 +63,6 @@ export class Home extends Component {
             <AntDesign name="areachart" size={50} color="#FFFFFF" onPress={() => this.props.navigation.navigate('AnalyticsScreen')} />
           </View>
         </View>
-        
         
       </LinearGradient>
     )
