@@ -5,7 +5,7 @@ import { StyleSheet } from 'react-native';
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#AEC9EB',
+    // backgroundColor: '#000',//'#AEC9EB',
     paddingTop: 100,
     // alignItems: 'center',
     // justifyContent: 'center',
@@ -62,7 +62,7 @@ const styles = StyleSheet.create({
     bottom: 0,
     flex: 1,
     alignContent: 'center',
-    justifyContent: 'center'
+    justifyContent: 'center',
   },
   dock: {
     flexDirection: 'row',

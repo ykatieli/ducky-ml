@@ -6,6 +6,7 @@ import { LinearGradient } from 'expo-linear-gradient';
 import { AntDesign, Feather, MaterialCommunityIcons, FontAwesome } from '@expo/vector-icons';
 
 import styles from '../Styles';
+import Dock from '../components/Dock';
 
 export class Journal extends Component {
   render() {
