@@ -3,7 +3,7 @@
 import React, { Component } from 'react';
 import { View, Text, Button } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
-import { AntDesign, Feather, MaterialCommunityIcons, FontAwesome, Ionicons, Entypo } from '@expo/vector-icons';
+import { AntDesign, Feather, MaterialCommunityIcons, FontAwesome, Ionicons, Entypo, MaterialIcons } from '@expo/vector-icons';
 
 import styles from '../Styles';
 import Dock from '../components/Dock';
@@ -19,40 +19,47 @@ export class JournalEntry extends Component {
         </View>
 
         {/* Entry Information */}
-        <View>
-          <View style={{display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', paddingLeft: 30, paddingRight: 30}}>
+        <View style={{paddingLeft: 30, paddingRight: 30}}>
+          <View style={{display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between',}}>
             <Text style={styles.white_15}>Date</Text>
             <Text style={styles.white_15}>Time</Text>
           </View>
           <View>
-            <Text>Placeholder Title</Text>
+            <Text style={styles.white_25}>placeholder title</Text>
           </View>
         </View>
 
         {/* Tools */}
-        <View> 
-
+        <View style={{display: 'flex', flexDirection: 'row', paddingLeft: 30, paddingRight: 30, paddingTop: 20}}> 
+          <MaterialIcons name="format-align-left" size={25} color="#fbfbfb" />
+          <MaterialIcons name="format-align-center" size={25} color="#fbfbfb" />
+          <MaterialIcons name="format-align-right" size={25} color="#fbfbfb" />
+          <MaterialIcons name="format-bold" size={25} color="#fbfbfb" />
+          <MaterialIcons name="format-italic" size={25} color="#fbfbfb" />
+          <MaterialIcons name="format-underlined" size={25} color="#fbfbfb" />
         </View>
 
         {/* Text Space */}
-        <View>
+        <View style={styles.corner_card}>
 
           {/* Bottom Bar */}
-          <View>
+          <View style={styles.bottom_bar}>
             {/* Tags */}
             <View>
-              <Text>Tags</Text>
-              <Text>#Journal1</Text>
+              <Text style={styles.blue_20}>Tags:</Text>
+              <Text></Text>
             </View>
             {/* Mood and Create Entry */}
-            <View>
-              <Text>Mood</Text>
-              <View>
-              
+            <View style={{display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', paddingRight: 20}}>
+              <Text style={styles.blue_20}>Mood:</Text>
+              <View style={{flexDirection: 'row', width: 150, justifyContent: 'space-evenly'}}>
+                <MaterialIcons name="sentiment-satisfied" size={25} color="#f9e067" />
+                <MaterialIcons name="sentiment-neutral" size={25} color="#f9e067" />
+                <MaterialIcons name="sentiment-dissatisfied" size={25} color="#f9e067" />
               </View>
               {/* Create Entry Button */}
-              <View>
-
+              <View style={styles.button_entry}>
+                <Text style={styles.white_20}>Create Entry</Text>
               </View>
             </View>
           </View>

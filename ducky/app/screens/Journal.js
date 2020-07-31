@@ -3,7 +3,7 @@
 import React, { Component } from 'react';
 import { View, Text, Button } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
-import { AntDesign, Feather, MaterialCommunityIcons, FontAwesome, Ionicons, Entypo } from '@expo/vector-icons';
+import { AntDesign, Feather, MaterialCommunityIcons, FontAwesome, Ionicons, Entypo, MaterialIcons } from '@expo/vector-icons';
 
 import styles from '../Styles';
 import Dock from '../components/Dock';
@@ -69,7 +69,7 @@ export class Journal extends Component {
           <View style={styles.journal_entry}>
             {/* Mood */}
             <View style={{width: 30, height: 30, borderRadius: 100, backgroundColor: '#ffffff', alignItems: 'center', justifyContent: 'center'}}>
-              <Ionicons name="ios-happy" size={25} color="#f9e067" />
+              <MaterialIcons name="sentiment-satisfied" size={25} color="#f9e067" />
             </View>
 
             {/* Time and Date */}
