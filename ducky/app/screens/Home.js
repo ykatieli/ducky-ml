@@ -14,15 +14,15 @@ export class Home extends Component {
       <LinearGradient colors={['#AEC9EB', 'rgba(174, 201, 235, 0.75)']} style={styles.container}>
 
         {/* Profile icon */}
-        <MaterialCommunityIcons name="account-circle" size={50} color="#fff" style={styles.profile_icon}/>
+        <MaterialCommunityIcons name="account-circle" size={50} color="#fff" style={styles.top_right}/>
 
         {/* Good morning, Haley! */}
         <View style={{paddingLeft: 30}}>
-          <Text style={styles.h5_white}>Good</Text>
-          <Text style={styles.h5_white}>morning,</Text>
+          <Text style={styles.white_45}>Good</Text>
+          <Text style={styles.white_45}>morning,</Text>
           <Text>
-            <Text style={styles.h5_yellow}>Haley</Text>
-            <Text style={styles.h5_white}>!</Text>
+            <Text style={styles.yellow_45}>Haley</Text>
+            <Text style={styles.white_45}>!</Text>
           </Text>
         </View>
 
@@ -32,21 +32,21 @@ export class Home extends Component {
           {/* Daily Check In */}
           <LinearGradient colors={['#ffffff', '#fbfbfb']} style={styles.cards} >
             <View style={{alignItems: 'center', paddingTop: 30, }}>
-              <Text style={styles.h3_blue}>Daily Check In</Text>
+              <Text style={styles.blue_25}>Daily Check In</Text>
             </View>
           </LinearGradient>
           
           {/* Daily Habits */}
           <LinearGradient colors={['#ffffff', '#fbfbfb']} style={styles.cards} >
             <View style={{alignItems: 'center', paddingTop: 30}}>
-              <Text style={styles.h3_blue}>Daily Habits</Text>
+              <Text style={styles.blue_25}>Daily Habits</Text>
             </View>
           </LinearGradient>
 
           {/* Memories */}
           <LinearGradient colors={['#ffffff', '#fbfbfb']} style={styles.cards} >
             <View style={{alignItems: 'center', paddingTop: 30}}>
-              <Text style={styles.h3_blue}>Memories</Text>
+              <Text style={styles.blue_25}>Memories</Text>
             </View>
           </LinearGradient>
             
@@ -64,7 +64,7 @@ export class Home extends Component {
           </View>
         </View>
         
-      </LinearGradient>
+      </LinearGradient> 
     )
   }
 }

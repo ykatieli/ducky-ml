@@ -11,7 +11,7 @@ export class HabitTracker extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.h4_white}>This is the habit tracker screen</Text>
+        <Text style={styles.white_40}>This is the habit tracker screen</Text>
         
         {/* Dock */}
         <View style={styles.dock_container}>
