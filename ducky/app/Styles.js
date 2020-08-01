@@ -117,6 +117,15 @@ const styles = StyleSheet.create({
     borderRadius: 20,
     margin: 10,
   },
+  //// Settings
+  settings_card: {
+    width: 364,
+    height: 230,
+    borderRadius: 20,
+    paddingTop: 0,
+    paddingLeft: 0,
+    margin: 25,
+  },
   //// Dock
   dock_container: {
     width: 414, 
@@ -132,6 +141,20 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-evenly',
   },
+  // account_container: {
+  //   width: 200, 
+  //   height: 100, 
+  //   backgroundColor: '#AEC9EB', 
+  //   position: 'absolute', 
+  //   bottom: 0,
+  //   flex: 1,
+  //   alignContent: 'center',
+  //   justifyContent: 'center'
+  // },
+  // account: {
+  //   flexDirection: 'row',
+  //   justifyContent: 'space-evenly',
+  // },
   //// Journal
   journal_cards: {
     width: 140,

@@ -13,7 +13,9 @@ import JournalEntry from './screens/JournalEntry';
 import HabitTracker from './screens/HabitTracker';
 import Analytics from './screens/Analytics';
 import Ducky from './screens/Ducky';
+import Profile from './screens/Profile';
 import Dock from './components/Dock';
+import Account from './components/Account';
 
 const Stack = createStackNavigator();
 
@@ -47,6 +49,10 @@ export default class App extends Component {
           <Stack.Screen
             name="DuckyScreen"
             component={Ducky}
+          />
+          <Stack.Screen
+            name="ProfileScreen"
+            component={Profile}
           />
         </Stack.Navigator>
       </NavigationContainer>
