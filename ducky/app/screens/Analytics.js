@@ -11,7 +11,7 @@ export class Analytics extends Component {
   render() {
     return (
       <LinearGradient style={styles.container} colors={['#6B8DB2', '#7998B9']}>
-        <Text style={styles.h4_white}>This is the analytics screen</Text>
+        <Text style={styles.white_40}>This is the analytics screen</Text>
        
         {/* Dock */}
         <View style={styles.dock_container}>
