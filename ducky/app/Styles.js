@@ -42,9 +42,17 @@ const styles = StyleSheet.create({
     fontStyle: 'normal',
     fontSize: 20,
   },
+  blue_18: {
+    color: '#718399',
+    fontSize: 18,
+  },
   white_15: {
     color: '#FBFBFB',
     fontStyle: 'normal',
+    fontSize: 15,
+  },
+  blue_15: {
+    color: '#718399',
     fontSize: 15,
   },
   white_12: {
@@ -156,7 +164,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#fbfbfb',
     borderTopLeftRadius: 60,
     marginTop: 30,
-    width: 430,
+    width: 414,
     height: 575,
   },
   bottom_bar: {
