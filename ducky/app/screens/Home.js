@@ -15,8 +15,8 @@ export class Home extends Component {
       <LinearGradient colors={['#AEC9EB', 'rgba(174, 201, 235, 0.75)']} style={styles.container}>
 
         {/* Account */}
-        <MaterialCommunityIcons name="account-circle" size={50} color="#fff" style={styles.profile_icon} onPress={() => this.props.navigation.navigate('ProfileScreen')}/>
-        
+        <MaterialCommunityIcons name="account-circle" size={50} color="#fff" style={styles.top_right} onPress={() => this.props.navigation.navigate('ProfileScreen')}/>
+
         {/* Good morning, Haley! */}
         <View style={{paddingLeft: 30}}>
           <Text style={styles.white_45}>Good</Text>

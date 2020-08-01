@@ -13,10 +13,10 @@ export class Profile extends Component {
       <View style={styles.container}>
 
         {/* Profile icon */}
-        <MaterialCommunityIcons name="account-circle" size={50} color="#fff" style={styles.profile_icon} onPress={() => this.props.navigation.navigate('ProfileScreen')}/>
+        <MaterialCommunityIcons name="account-circle" size={50} color="#fff" style={styles.top_right} onPress={() => this.props.navigation.navigate('ProfileScreen')}/>
 
         {/* Introduction */}
-        <Text style={styles.h4_white}>Profile Screen</Text>
+        <Text style={styles.white_40}>Profile Screen</Text>
 
         {/* Cards */}
         <View style={{paddingTop: 30,flexDirection: 'column', justifyContent: 'center'}}>
@@ -24,7 +24,7 @@ export class Profile extends Component {
           {/* Daily Habits */}
           <LinearGradient colors={['#ffffff', '#fbfbfb']} style={styles.settings_card} >
             <View style={{alignItems: 'center', paddingTop: 30}}>
-              <Text style={styles.h3_blue}>Settings</Text>
+              <Text style={styles.blue_25}>Settings</Text>
               <Text style={styles.h4_blue}>Hello</Text>
               <Text style={styles.h4_blue}>Hello</Text>
               <Text style={styles.h4_blue}>Hello</Text>
@@ -36,13 +36,13 @@ export class Profile extends Component {
 
           <LinearGradient colors={['#ffffff', '#fbfbfb']} style={styles.settings_card} >
             <View style={{alignItems: 'center', paddingTop: 30}}>
-              <Text style={styles.h3_blue}>Premium</Text>
+              <Text style={styles.blue_25}>Premium</Text>
             </View>
           </LinearGradient>
 
           <LinearGradient colors={['#ffffff', '#fbfbfb']} style={styles.settings_card} >
             <View style={{alignItems: 'center', paddingTop: 30}}>
-              <Text style={styles.h3_blue}>Other</Text>
+              <Text style={styles.blue_25}>Other</Text>
             </View>
           </LinearGradient>
             
