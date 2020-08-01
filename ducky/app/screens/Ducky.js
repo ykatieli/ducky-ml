@@ -11,7 +11,7 @@ export class Ducky extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.h4_white}>This is the Ducky screen</Text>
+        <Text style={styles.white_40}>This is the Ducky screen</Text>
         
         {/* Dock */}
         <View style={styles.dock_container}>

@@ -9,10 +9,13 @@ import { createStackNavigator } from '@react-navigation/stack';
 
 import Home from './screens/Home';
 import Journal from './screens/Journal';
+import JournalEntry from './screens/JournalEntry';
 import HabitTracker from './screens/HabitTracker';
 import Analytics from './screens/Analytics';
 import Ducky from './screens/Ducky';
 import Profile from './screens/Profile';
+import Dock from './components/Dock';
+import Account from './components/Account';
 
 const Stack = createStackNavigator();
 
@@ -23,10 +26,6 @@ export default class App extends Component {
          <Stack.Navigator 
           initialRouteName="Home"
           screenOptions={{ headerShown: false}}>
-          {/* <Stack.Screen
-            name="Onboarding1"
-            component={Onboarding1Screen}
-          /> */}
           <Stack.Screen
             name="HomeScreen"
             component={Home}
@@ -34,6 +33,10 @@ export default class App extends Component {
           <Stack.Screen
             name="JournalScreen"
             component={Journal}
+          />
+          <Stack.Screen
+            name="JournalEntryScreen"
+            component={JournalEntry}
           />
           <Stack.Screen
             name="HabitTrackerScreen"
