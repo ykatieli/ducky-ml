@@ -1,50 +1,48 @@
+// Profile.js
+
 import React, { Component } from 'react';
 import { View, Text, Button } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import { AntDesign, Feather, MaterialCommunityIcons, FontAwesome } from '@expo/vector-icons';
 
 import styles from '../Styles';
-import Dock from '../components/Dock';
-import Account from '../components/Account';
 
-export class Home extends Component {
+export class Profile extends Component {
   render() {
     return (
-      <LinearGradient colors={['#AEC9EB', 'rgba(174, 201, 235, 0.75)']} style={styles.container}>
-        {/* Account */}
+      <View style={styles.container}>
+
+        {/* Profile icon */}
         <MaterialCommunityIcons name="account-circle" size={50} color="#fff" style={styles.profile_icon} onPress={() => this.props.navigation.navigate('ProfileScreen')}/>
-        
-        {/* Good morning, Haley! */}
-        <View style={{paddingLeft: 30}}>
-          <Text style={styles.h5_white}>Good</Text>
-          <Text style={styles.h5_white}>morning,</Text>
-          <Text>
-            <Text style={styles.h5_yellow}>Haley</Text>
-            <Text style={styles.h5_white}>!</Text>
-          </Text>
-        </View>
+
+        {/* Introduction */}
+        <Text style={styles.h4_white}>Profile Screen</Text>
 
         {/* Cards */}
-        <View style={{paddingTop: 30, flexDirection: 'row', justifyContent: 'center'}}>
-
-          {/* Daily Check In */}
-          <LinearGradient colors={['#ffffff', '#fbfbfb']} style={styles.cards} >
-            <View style={{alignItems: 'center', paddingTop: 30, }}>
-              <Text style={styles.h3_blue}>Daily Check In</Text>
-            </View>
-          </LinearGradient>
+        <View style={{paddingTop: 30,flexDirection: 'column', justifyContent: 'center'}}>
           
           {/* Daily Habits */}
-          <LinearGradient colors={['#ffffff', '#fbfbfb']} style={styles.cards} >
+          <LinearGradient colors={['#ffffff', '#fbfbfb']} style={styles.settings_card} >
             <View style={{alignItems: 'center', paddingTop: 30}}>
-              <Text style={styles.h3_blue}>Daily Habits</Text>
+              <Text style={styles.h3_blue}>Settings</Text>
+              <Text style={styles.h4_blue}>Hello</Text>
+              <Text style={styles.h4_blue}>Hello</Text>
+              <Text style={styles.h4_blue}>Hello</Text>
+              <Text style={styles.h4_blue}>Hello</Text>
+              <Text style={styles.h4_blue}>Hello</Text>
+              <Text style={styles.h4_blue}>Hello</Text>
             </View>
           </LinearGradient>
 
-          {/* Memories */}
-          <LinearGradient colors={['#ffffff', '#fbfbfb']} style={styles.cards} >
+          <LinearGradient colors={['#ffffff', '#fbfbfb']} style={styles.settings_card} >
             <View style={{alignItems: 'center', paddingTop: 30}}>
-              <Text style={styles.h3_blue}>Memories</Text>
+              <Text style={styles.h3_blue}>Premium</Text>
+            </View>
+          </LinearGradient>
+
+          <LinearGradient colors={['#ffffff', '#fbfbfb']} style={styles.settings_card} >
+            <View style={{alignItems: 'center', paddingTop: 30}}>
+              <Text style={styles.h3_blue}>Other</Text>
             </View>
           </LinearGradient>
             
@@ -60,11 +58,10 @@ export class Home extends Component {
             <AntDesign name="areachart" size={50} color="#FFFFFF" onPress={() => this.props.navigation.navigate('AnalyticsScreen')} />
           </View>
         </View>
-        
-        
-      </LinearGradient>
+
+      </View>
     )
   }
 }
 
-export default Home;
+export default Profile;

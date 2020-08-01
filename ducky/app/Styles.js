@@ -48,6 +48,14 @@ const styles = StyleSheet.create({
     borderRadius: 20,
     margin: 10,
   },
+  settings_card: {
+    width: 364,
+    height: 230,
+    borderRadius: 20,
+    paddingTop: 0,
+    paddingLeft: 0,
+    margin: 25,
+  },
   h3_blue: {
     color: '#6B8DB2',
     fontStyle: 'normal',
@@ -68,6 +76,20 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-evenly',
   },
+  // account_container: {
+  //   width: 200, 
+  //   height: 100, 
+  //   backgroundColor: '#AEC9EB', 
+  //   position: 'absolute', 
+  //   bottom: 0,
+  //   flex: 1,
+  //   alignContent: 'center',
+  //   justifyContent: 'center'
+  // },
+  // account: {
+  //   flexDirection: 'row',
+  //   justifyContent: 'space-evenly',
+  // },
   h4_white: {
     color: '#FBFBFB',
     fontStyle: 'normal',
