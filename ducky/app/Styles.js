@@ -5,6 +5,11 @@ import { StyleSheet } from 'react-native';
 const styles = StyleSheet.create({
 
   // Text
+  yellow_75: {
+    color: '#f9e067',
+    fontSize: 75,
+    fontWeight: 'bold'
+  },
   white_45: {
     color: '#fbfbfb', 
     fontSize: 45,
@@ -209,6 +214,29 @@ const styles = StyleSheet.create({
     borderRadius: 30,
     alignItems: 'center',
     justifyContent: 'center',
+  },
+  // Analytics
+  analytics_card: {
+    width: 354,
+    backgroundColor: '#fbfbfb',
+    borderRadius: 30,
+    alignItems: 'center',
+    padding: 10,
+    marginBottom: 15,
+  },
+  analytics_halfcard: {
+    width: 167,
+    backgroundColor: '#fbfbfb',
+    borderRadius: 30,
+    alignItems: 'center',
+    paddingTop: 20,
+    paddingBottom: 30,
+    marginBottom: 15,
+    marginLeft: 7.5,
+    marginRight: 7.5,
+    justifyContent: 'center',
+    alignContent: 'center',
+    alignItems: 'center',
   }
 });
 

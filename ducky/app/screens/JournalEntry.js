@@ -1,7 +1,7 @@
 // JournalEntry.js
 
 import React, { Component, useState, useEffect, useRef } from 'react';
-import { View, Text, TextInput, Button } from 'react-native';
+import { View, Text, TextInput, Keyboard, TouchableWithoutFeedback, Button } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import { AntDesign, Feather, MaterialCommunityIcons, FontAwesome, Ionicons, Entypo, MaterialIcons } from '@expo/vector-icons';
 
@@ -76,6 +76,8 @@ export class JournalEntry extends Component {
     var hours = new Date().getHours();
     var min = new Date().getMinutes();
 
+    min = (min<10?'0':'') + min;
+
     if (hours < 12 || hours === 24) {
       if (hours === 24) hours = 12;
       this.setState({time: hours + ':' + min + ' am'});
@@ -113,16 +115,18 @@ export class JournalEntry extends Component {
             <Text style={styles.white_15}>{this.state.date}</Text>
             <Text style={styles.white_15}>{this.state.time}</Text>
           </View>
-          <View>
-            <TextInput style = {styles.white_25}
-              //  underlineColorAndroid = "transparent"
-               placeholder = "placeholder title"
-               placeholderTextColor = "#fbfbfb"
-               autoCapitalize = "none"
-               onChangeText = {this.handleEntryTitle}
-            />
-            {/* <Text style={styles.white_25}>placeholder title</Text> */}
-          </View>
+          <TouchableWithoutFeedback onPress={Keyboard.dismiss} accessible={false}>
+            <View>
+              <TextInput style = {styles.white_25}
+                underlineColorAndroid = "transparent"
+                placeholder = "placeholder title"
+                placeholderTextColor = "#fbfbfb"
+                autoCapitalize = "none"
+                onChangeText = {this.handleEntryTitle}
+                
+              />
+            </View>
+          </TouchableWithoutFeedback>
         </View>
 
         {/* Tools */}
@@ -136,32 +140,35 @@ export class JournalEntry extends Component {
         </View>
 
         {/* Text Space */}
-        <View style={styles.corner_card}>
-
-          <View style={{padding: 30}}>
-            <TextInput style = {styles.blue_18}
-              underlineColorAndroid = "transparent"
-              placeholder = "Begin entry here..."
-              placeholderTextColor = "#718399"
-              autoCapitalize = "none"
-              multiline={true}
-              onChangeText = {this.handlePassword}
-            />
-          </View>
+        <View style={styles.corner_card} >
+          <TouchableWithoutFeedback onPress={Keyboard.dismiss()} accessible={false}>
+            <View style={{padding: 30}}>
+              <TextInput style = {styles.blue_18}
+                underlineColorAndroid = "transparent"
+                placeholder = "Begin entry here..."
+                placeholderTextColor = "#718399"
+                autoCapitalize = "none"
+                multiline={true}
+                onChangeText = {this.handleEntry}
+              />
+            </View>
+          </TouchableWithoutFeedback>
 
           {/* Bottom Bar */}
           <View style={styles.bottom_bar}>
             {/* Tags */}
             <View style={{flexDirection: 'row', alignItems: 'center'}}>
               <Text style={styles.blue_20}>Tags:</Text>
-              <View style={{marginLeft: 10}}>
-                <TextInput style = {styles.blue_15}
-                  placeholder = "#"
-                  placeholderTextColor = "#718399"
-                  autoCapitalize = "none"
-                  onChangeText = {this.handleTags}
-                />
-              </View>
+              <TouchableWithoutFeedback onPress={Keyboard.dismiss()} accessible={false}>
+                <View style={{marginLeft: 10}}>
+                  <TextInput style = {styles.blue_15}
+                    placeholder = "#"
+                    placeholderTextColor = "#718399"
+                    autoCapitalize = "none"
+                    onChangeText = {this.handleTags}
+                  />
+                </View>
+              </TouchableWithoutFeedback>
             </View>
             {/* Mood and Create Entry */}
             <View style={{display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', paddingRight: 20}}>
