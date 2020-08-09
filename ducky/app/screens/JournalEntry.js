@@ -7,6 +7,26 @@ import { AntDesign, Feather, MaterialCommunityIcons, FontAwesome, Ionicons, Enty
 
 import styles from '../Styles';
 import Dock from '../components/Dock';
+import firebase from 'firebase';
+
+var config = {
+    apiKey: "AIzaSyCeTrtwF_hjGoHeZZlYOYI1CpxbKuW7twg",
+    authDomain: "ducky-ml.firebaseapp.com",
+    databaseURL: "https://ducky-ml.firebaseio.com",
+    projectId: "ducky-ml",
+    storageBucket: "ducky-ml.appspot.com",
+    messagingSenderId: "1096270328273"
+};
+
+var expEntry = "Had a fun day today, went out with friends, enjoyed my time.";
+
+var state = {
+  date: '',
+  time: '',
+  entryTitle: '',
+  entry: '',
+  tags: '',
+}
 
 export class JournalEntry extends Component {
 
@@ -26,18 +46,16 @@ export class JournalEntry extends Component {
     this.handleTags = this.handleTags.bind(this);
   }
 
-  componentDidMount() {
-
-    // Set date
-
+  componentWillMount() {
+    
     var date = new Date().getDate();
     var month = new Date().getMonth() + 1;
     var year = new Date().getFullYear();
 
     var fullMonth;
 
-    switch(month) {
-      case 1: 
+    switch (month) {
+      case 1:
         fullMonth = 'January';
         break;
       case 2:
@@ -58,13 +76,13 @@ export class JournalEntry extends Component {
       case 7:
         fullMonth = 'July';
         break;
-      case 8: 
+      case 8:
         fullMonth = 'August';
         break;
-      case 9: 
+      case 9:
         fullMonth = 'September';
         break;
-      case 10: 
+      case 10:
         fullMonth = 'October';
         break;
       case 11:
@@ -74,10 +92,126 @@ export class JournalEntry extends Component {
         fullMonth = 'December';
         break;
       default:
-        fullMonth = 'Error';   
+        fullMonth = 'Error';
     }
 
-    this.setState({date: fullMonth + ' ' + date + ', ' + year });
+  
+    // set date state here
+    this.setState({ date: fullMonth + ' ' + date + ', ' + year });
+
+    var hours = new Date().getHours();
+    var min = new Date().getMinutes();
+    
+    min = (min<10?'0':'') + min;
+
+    if (hours < 12 || hours === 24) {
+      if (hours === 24) hours = 12;
+      this.setState({ time: hours + ':' + min + ' am' });
+    }
+    else {
+      hours = hours - 12;
+      this.setState({ time: hours + ':' + min + ' pm' });
+    }
+
+    //set entry state here
+    // CHANGE: expEntry to text put into the journal entry
+    this.setState({entry: expEntry});
+
+    // CHANGE: hardcoded now
+    this.setState({entryTitle: "New Entry"});
+
+    
+
+
+    if (!firebase.apps.length){
+      firebase.initializeApp(config);
+    }
+
+    // To select data from firebase every time data has changed !
+    // Utilize the current database to fill in journal information
+    firebase.database().ref('users/').on('value', (data) => {
+        console.log(data.toJSON());
+    })
+
+    // To Await 5 seconds to insert a new user
+    // CHANGE: expUser to specific user
+    setTimeout(() => {
+        firebase.database().ref('users/expUser/' + Date.now().toString()).set(
+            {
+                entryTitle: this.state.entryTitle,
+                entry: this.state.entry,
+                time: this.state.time,
+                date: this.state.date,
+                tags: this.state.tags
+            }
+        ).then(() => {
+            console.log('INSERTED !');
+        }).catch((error) => {
+            console.log(error);
+        });
+    }, 10000);
+    // change this depending on how quickly you want it processed
+
+    // // To Update a user
+    // firebase.database().ref('users/004').update({
+    //     name: 'Pheng Sengvuthy'
+    // });
+
+    // // To Remove a user
+    // firebase.database().ref('users/004').remove();
+
+  }
+
+  componentDidMount() {
+
+    var date = new Date().getDate();
+    var month = new Date().getMonth() + 1;
+    var year = new Date().getFullYear();
+
+    var fullMonth;
+
+    switch (month) {
+      case 1:
+        fullMonth = 'January';
+        break;
+      case 2:
+        fullMonth = 'February';
+        break;
+      case 3:
+        fullMonth = 'March';
+        break;
+      case 4:
+        fullMonth = 'April';
+        break;
+      case 5:
+        fullMonth = 'May';
+        break;
+      case 6:
+        fullMonth = 'June';
+        break;
+      case 7:
+        fullMonth = 'July';
+        break;
+      case 8:
+        fullMonth = 'August';
+        break;
+      case 9:
+        fullMonth = 'September';
+        break;
+      case 10:
+        fullMonth = 'October';
+        break;
+      case 11:
+        fullMonth = 'November';
+        break;
+      case 12:
+        fullMonth = 'December';
+        break;
+      default:
+        fullMonth = 'Error';
+    }
+
+    this.setState({ date: fullMonth + ' ' + date + ', ' + year });
 
     // Set time
 
@@ -88,41 +222,42 @@ export class JournalEntry extends Component {
 
     if (hours < 12 || hours === 24) {
       if (hours === 24) hours = 12;
-      this.setState({time: hours + ':' + min + ' am'});
+      this.setState({ time: hours + ':' + min + ' am' });
     }
     else {
       hours = hours - 12;
-      this.setState({time: hours + ':' + min + ' pm'});
+      this.setState({ time: hours + ':' + min + ' pm' });
     }
   }
 
   handleEntryTitle = (text) => {
-    this.setState({entryTitle: text});
+    this.setState({ entryTitle: text });
   }
 
   handleEntry = (text) => {
-    this.setState({entry: text});
+    this.setState({ entry: text });
   }
 
   handleTags = (text) => {
-    this.setState({tags: text});
+    this.setState({ tags: text });
   }
 
   render() {
     return (
       <LinearGradient colors={['#6B8DB2', '#7998B9']} style={styles.container}>
-        
+
         {/* Back Button */}
         <View style={styles.top_left}>
           <Ionicons name="ios-arrow-back" size={25} color="#ffffff" />
         </View>
 
         {/* Entry Information */}
-        <View style={{paddingLeft: 30, paddingRight: 30}}>
-          <View style={{display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between',}}>
+        <View style={{ paddingLeft: 30, paddingRight: 30 }}>
+          <View style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', }}>
             <Text style={styles.white_15}>{this.state.date}</Text>
             <Text style={styles.white_15}>{this.state.time}</Text>
           </View>
+
           {/* <TouchableWithoutFeedback onPress={Keyboard.dismiss} accessible={false}> */}
             <View>
               <TextInput style = {styles.white_25}
@@ -165,7 +300,7 @@ export class JournalEntry extends Component {
           {/* Bottom Bar */}
           <View style={styles.bottom_bar}>
             {/* Tags */}
-            <View style={{flexDirection: 'row', alignItems: 'center'}}>
+            <View style={{ flexDirection: 'row', alignItems: 'center' }}>
               <Text style={styles.blue_20}>Tags:</Text>
               {/* <TouchableWithoutFeedback onPress={Keyboard.dismiss()} accessible={false}> */}
                 <View style={{marginLeft: 10}}>
@@ -179,9 +314,9 @@ export class JournalEntry extends Component {
               {/* </TouchableWithoutFeedback> */}
             </View>
             {/* Mood and Create Entry */}
-            <View style={{display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', paddingRight: 20}}>
+            <View style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', paddingRight: 20 }}>
               <Text style={styles.blue_20}>Mood:</Text>
-              <View style={{flexDirection: 'row', width: 150, justifyContent: 'space-evenly'}}>
+              <View style={{ flexDirection: 'row', width: 150, justifyContent: 'space-evenly' }}>
                 <MaterialIcons name="sentiment-satisfied" size={25} color="#f9e067" />
                 <MaterialIcons name="sentiment-neutral" size={25} color="#f9e067" />
                 <MaterialIcons name="sentiment-dissatisfied" size={25} color="#f9e067" />
@@ -189,11 +324,13 @@ export class JournalEntry extends Component {
               {/* Create Entry Button */}
               <View style={styles.button_entry}>
                 <Text style={styles.white_20}>Create Entry</Text>
+
+                {/* Change this so that when we press this button, we update all states, then call the database update */}
               </View>
             </View>
           </View>
         </View>
-        
+
         {/* Dock */}
         <View style={styles.dock_container}>
           <View style={styles.dock}>
