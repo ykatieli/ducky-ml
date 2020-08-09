@@ -14,7 +14,12 @@ export class Journal extends Component {
       <LinearGradient colors={['#aec9eb', 'rgba(174, 201, 235, 0.75)']} style={styles.container}>
 
         <View style={styles.top_right}>
+          {/* Three dots replaced by "Add Journal" icon
+
           <Entypo name="dots-three-vertical" size={25} color="#ffffff" />
+
+           */}
+           <Ionicons name="ios-add-circle" size={35} color="#ffffff" onPress={() => this.props.navigation.navigate('JournalEntryScreen')}/>
         </View>
 
         <View style={styles.header}>
@@ -22,7 +27,7 @@ export class Journal extends Component {
         </View>
         
         {/* Add entry and Search */}
-        <View style={{alignItems: 'center', paddingLeft: 30, paddingRight: 30}}>
+        {/* <View style={{alignItems: 'center', paddingLeft: 30, paddingRight: 30}}>
           <View style={{display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'center'}}>
             <View style={{paddingRight: 10}}>
               <Ionicons name="ios-add-circle" size={35} color="#ffffff" onPress={() => this.props.navigation.navigate('JournalEntryScreen')}/>
@@ -36,14 +41,14 @@ export class Journal extends Component {
               </View>
             </View>
           </View>
-        </View>
+        </View> */}
 
         {/* Journal Cards */}
         <View style={{paddingTop: 20, paddingLeft: 20, display: 'flex', flexDirection: 'row',}}>
           {/* Journal #1: current journal */}
-          <LinearGradient colors={['#ffffff', '#fbfbfb']} style={styles.journal_cards}>
+          <LinearGradient colors={['#FFF3C1', '#F9E076']} style={styles.journal_cards}>
             <View>
-              <Text style={styles.blue_25}>Journal #1</Text>
+              <Text style={styles.white_25}>Journal #1</Text>
             </View>
           </LinearGradient>
 
