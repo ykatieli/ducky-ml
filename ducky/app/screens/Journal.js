@@ -46,9 +46,9 @@ export class Journal extends Component {
         {/* Journal Cards */}
         <View style={{paddingTop: 20, paddingLeft: 20, display: 'flex', flexDirection: 'row',}}>
           {/* Journal #1: current journal */}
-          <LinearGradient colors={['#ffffff', '#fbfbfb']} style={styles.journal_cards}>
+          <LinearGradient colors={['#FFF3C1', '#F9E076']} style={styles.journal_cards}>
             <View>
-              <Text style={styles.blue_25}>Journal #1</Text>
+              <Text style={styles.white_25}>Journal #1</Text>
             </View>
           </LinearGradient>
 

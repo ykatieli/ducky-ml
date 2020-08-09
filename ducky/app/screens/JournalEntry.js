@@ -10,12 +10,20 @@ import Dock from '../components/Dock';
 
 export class JournalEntry extends Component {
 
-  state = {
-    date: '',
-    time: '',
-    entryTitle: '',
-    entry: '',
-    tags: '',
+  constructor() {
+    super();
+
+    this.state = {
+      date: '',
+      time: '',
+      entryTitle: '',
+      entry: '',
+      tags: '',
+    } 
+
+    this.handleEntryTitle = this.handleEntryTitle.bind(this);
+    this.handleEntry = this.handleEntry.bind(this);
+    this.handleTags = this.handleTags.bind(this);
   }
 
   componentDidMount() {
@@ -115,7 +123,7 @@ export class JournalEntry extends Component {
             <Text style={styles.white_15}>{this.state.date}</Text>
             <Text style={styles.white_15}>{this.state.time}</Text>
           </View>
-          <TouchableWithoutFeedback onPress={Keyboard.dismiss} accessible={false}>
+          {/* <TouchableWithoutFeedback onPress={Keyboard.dismiss} accessible={false}> */}
             <View>
               <TextInput style = {styles.white_25}
                 underlineColorAndroid = "transparent"
@@ -126,22 +134,22 @@ export class JournalEntry extends Component {
                 
               />
             </View>
-          </TouchableWithoutFeedback>
+          {/* </TouchableWithoutFeedback> */}
         </View>
 
         {/* Tools */}
         <View style={{display: 'flex', flexDirection: 'row', paddingLeft: 30, paddingRight: 30, paddingTop: 20}}> 
-          <MaterialIcons name="format-align-left" size={25} color="#fbfbfb" />
-          <MaterialIcons name="format-align-center" size={25} color="#fbfbfb" />
-          <MaterialIcons name="format-align-right" size={25} color="#fbfbfb" />
-          <MaterialIcons name="format-bold" size={25} color="#fbfbfb" />
-          <MaterialIcons name="format-italic" size={25} color="#fbfbfb" />
-          <MaterialIcons name="format-underlined" size={25} color="#fbfbfb" />
+          <MaterialIcons name="format-align-left" size={25} color="#fbfbfb" style={{marginRight: 15}} />
+          <MaterialIcons name="format-align-center" size={25} color="#fbfbfb" style={{marginRight: 15}} />
+          <MaterialIcons name="format-align-right" size={25} color="#fbfbfb" style={{marginRight: 15}} />
+          <MaterialIcons name="format-bold" size={25} color="#fbfbfb" style={{marginRight: 15}} />
+          <MaterialIcons name="format-italic" size={25} color="#fbfbfb" style={{marginRight: 15}} />
+          <MaterialIcons name="format-underlined" size={25} color="#fbfbfb" style={{marginRight: 15}} />
         </View>
 
         {/* Text Space */}
         <View style={styles.corner_card} >
-          <TouchableWithoutFeedback onPress={Keyboard.dismiss()} accessible={false}>
+          {/* <TouchableWithoutFeedback onPress={Keyboard.dismiss()} accessible={false}> */}
             <View style={{padding: 30}}>
               <TextInput style = {styles.blue_18}
                 underlineColorAndroid = "transparent"
@@ -152,14 +160,14 @@ export class JournalEntry extends Component {
                 onChangeText = {this.handleEntry}
               />
             </View>
-          </TouchableWithoutFeedback>
+          {/* </TouchableWithoutFeedback> */}
 
           {/* Bottom Bar */}
           <View style={styles.bottom_bar}>
             {/* Tags */}
             <View style={{flexDirection: 'row', alignItems: 'center'}}>
               <Text style={styles.blue_20}>Tags:</Text>
-              <TouchableWithoutFeedback onPress={Keyboard.dismiss()} accessible={false}>
+              {/* <TouchableWithoutFeedback onPress={Keyboard.dismiss()} accessible={false}> */}
                 <View style={{marginLeft: 10}}>
                   <TextInput style = {styles.blue_15}
                     placeholder = "#"
@@ -168,7 +176,7 @@ export class JournalEntry extends Component {
                     onChangeText = {this.handleTags}
                   />
                 </View>
-              </TouchableWithoutFeedback>
+              {/* </TouchableWithoutFeedback> */}
             </View>
             {/* Mood and Create Entry */}
             <View style={{display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', paddingRight: 20}}>

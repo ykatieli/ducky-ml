@@ -30,6 +30,7 @@ const styles = StyleSheet.create({
     color: '#FBFBFB',
     fontStyle: 'normal',
     fontSize: 25,
+    fontWeight: '600',
   },
   blue_25: {
     color: '#6B8DB2',
