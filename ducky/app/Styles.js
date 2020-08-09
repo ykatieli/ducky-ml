@@ -238,7 +238,14 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignContent: 'center',
     alignItems: 'center',
-  }
+  },
+  // Ducky
+  chatbox: {
+    borderRadius: 20,
+    maxWidth: 225,
+    padding: 10,
+    marginBottom: 10,
+  },
 });
 
 export default styles;
