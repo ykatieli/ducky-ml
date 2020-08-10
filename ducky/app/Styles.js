@@ -194,7 +194,7 @@ const styles = StyleSheet.create({
     borderTopLeftRadius: 60,
     marginTop: 30,
     width: 414,
-    height: 575,
+    height: 620,
   },
   bottom_bar: {
     backgroundColor: '#fbfbfb',

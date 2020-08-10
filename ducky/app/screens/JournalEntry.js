@@ -1,9 +1,10 @@
 // JournalEntry.js
 
 import React, { Component, useState, useEffect, useRef } from 'react';
-import { View, Text, TextInput, Keyboard, TouchableWithoutFeedback } from 'react-native';
+import { View, Text, TextInput, Keyboard, TouchableWithoutFeedback, Button, Alert} from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import { AntDesign, Feather, MaterialCommunityIcons, FontAwesome, Ionicons, Entypo, MaterialIcons } from '@expo/vector-icons';
+import InputScrollView from 'react-native-input-scroll-view';
 
 import styles from '../Styles';
 import Dock from '../components/Dock';
@@ -40,11 +41,17 @@ export class JournalEntry extends Component {
       entryTitle: '',
       entry: '',
       tags: '',
+      mood: '',
+      height: 0,
     } 
 
     this.handleEntryTitle = this.handleEntryTitle.bind(this);
     this.handleEntry = this.handleEntry.bind(this);
     this.handleTags = this.handleTags.bind(this);
+    this.setMoodHappy = this.setMoodHappy.bind(this);
+    this.setMoodNeutral = this.setMoodNeutral.bind(this);
+    this.setMoodSad = this.setMoodSad.bind(this);
+    this.createEntry = this.createEntry.bind(this);
   }
 
   componentWillMount() {
@@ -243,6 +250,21 @@ export class JournalEntry extends Component {
     this.setState({ tags: text });
   }
 
+  setMoodHappy = () => {
+    this.setState({mood: 'happy'})
+  }
+  setMoodNeutral = () => {
+    this.setState({mood: 'neutral'})
+  }
+  setMoodSad = () => {
+    this.setState({mood: 'sad'})
+  }
+
+  createEntry = (event) => {
+    Alert.alert(`Created "${this.state.entryTitle}"`, `on ${this.state.date} at ${this.state.time}`, "Hello")
+    this.props.navigation.navigate('JournalScreen')
+  }
+
   render() {
     return (
 
@@ -272,60 +294,66 @@ export class JournalEntry extends Component {
           </View>
 
           {/* Tools */}
-          <View style={{display: 'flex', flexDirection: 'row', paddingLeft: 30, paddingRight: 30, paddingTop: 20}}> 
+          {/* <View style={{display: 'flex', flexDirection: 'row', paddingLeft: 30, paddingRight: 30, paddingTop: 20}}> 
             <MaterialIcons name="format-align-left" size={25} color="#fbfbfb" style={{marginRight: 15}} />
             <MaterialIcons name="format-align-center" size={25} color="#fbfbfb" style={{marginRight: 15}} />
             <MaterialIcons name="format-align-right" size={25} color="#fbfbfb" style={{marginRight: 15}} />
             <MaterialIcons name="format-bold" size={25} color="#fbfbfb" style={{marginRight: 15}} />
             <MaterialIcons name="format-italic" size={25} color="#fbfbfb" style={{marginRight: 15}} />
             <MaterialIcons name="format-underlined" size={25} color="#fbfbfb" style={{marginRight: 15}} />
-          </View>
+          </View> */}
 
           {/* Text Space */}
           <View style={styles.corner_card} >
-              <View style={{padding: 30}}>
-                <TextInput style = {styles.blue_18}
-                  underlineColorAndroid = "transparent"
-                  placeholder = "Begin entry here..."
-                  placeholderTextColor = "#718399"
-                  autoCapitalize = "none"
-                  multiline={true}
-                  onChangeText = {this.handleEntry}
-                />   
-              </View>
+            <View style={{padding: 30}}>
+              <InputScrollView>
+              <TextInput 
+                style = {[styles.blue_18, { height: Math.min(490, Math.max(500, this.state.height))}]}
+                placeholder = "Begin entry here..."
+                placeholderTextColor = "#718399"
+                autoCapitalize = "none"
+                multiline={true}
+                onContentSizeChange={(event) => 
+                  this.setState({ height:event.nativeEvent.contentSize.height})
+                }
+                onChangeText = {this.handleEntry}
+              />   
+              </InputScrollView>
+            </View>
+          </View>
 
-            {/* Bottom Bar */}
+          {/* Bottom Bar */}
+          <View>
             <KeyboardShift>
               { () => (
-            <View style={styles.bottom_bar}>
-              {/* Tags */}
-              <View style={{ flexDirection: 'row', alignItems: 'center' }}>
-                <Text style={styles.blue_20}>Tags:</Text>
-                  <View style={{marginLeft: 10}}>
-                    <TextInput style = {styles.blue_15}
-                      placeholder = "#"
-                      placeholderTextColor = "#718399"
-                      autoCapitalize = "none"
-                      onChangeText = {this.handleTags}
-                    />
+                <View style={styles.bottom_bar}>
+                  {/* Tags */}
+                  <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+                    <Text style={styles.blue_20}>Tags:</Text>
+                      <View style={{marginLeft: 10}}>
+                        <TextInput style = {styles.blue_15}
+                          placeholder = "#"
+                          placeholderTextColor = "#718399"
+                          autoCapitalize = "none"
+                          onChangeText = {this.handleTags}
+                        />
+                      </View>
                   </View>
-              </View>
-              {/* Mood and Create Entry */}
-              <View style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', paddingRight: 20 }}>
-                <Text style={styles.blue_20}>Mood:</Text>
-                <View style={{ flexDirection: 'row', width: 150, justifyContent: 'space-evenly' }}>
-                  <MaterialIcons name="sentiment-satisfied" size={25} color="#f9e067" />
-                  <MaterialIcons name="sentiment-neutral" size={25} color="#f9e067" />
-                  <MaterialIcons name="sentiment-dissatisfied" size={25} color="#f9e067" />
+                  {/* Mood and Create Entry */}
+                  <View style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', paddingRight: 20 }}>
+                    <Text style={styles.blue_20}>Mood:</Text>
+                    <View style={{ flexDirection: 'row', width: 150, justifyContent: 'space-evenly' }}>
+                      <MaterialIcons name="sentiment-satisfied" size={25} color="#f9e067" onPress={this.setMoodHappy}/>
+                      <MaterialIcons name="sentiment-neutral" size={25} color="#f9e067" onPress={this.setMoodNeutral} />
+                      <MaterialIcons name="sentiment-dissatisfied" size={25} color="#f9e067" onPress={this.setMoodSad}/>
+                    </View>
+                    {/* Create Entry Button */}
+                    <View style={styles.button_entry}>
+                      <Button title="Create Entry"  onPress={this.createEntry} color="#FBFBFB"/>
+                      {/* Change this so that when we press this button, we update all states, then call the database update */}
+                    </View>
+                  </View> 
                 </View>
-                {/* Create Entry Button */}
-                <View style={styles.button_entry} onPress={() => null}>
-                  <Text style={styles.white_20}>Create Entry</Text>
-
-                  {/* Change this so that when we press this button, we update all states, then call the database update */}
-                </View>
-              </View> 
-            </View>
               )}
             </KeyboardShift>
           </View>          
