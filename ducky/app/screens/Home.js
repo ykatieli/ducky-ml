@@ -54,7 +54,6 @@ export class Home extends Component {
         </View>
 
         {/* Dock */}
-        {/* <Dock></Dock>         */}
         <View style={styles.dock_container}>
           <View style={styles.dock}>
             <Feather name="home" size={50} color="#FFFFFF" onPress={() => this.props.navigation.navigate('HomeScreen')} />

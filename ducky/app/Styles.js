@@ -21,10 +21,22 @@ const styles = StyleSheet.create({
     fontSize: 40,
     fontWeight: 'bold',
   },
+  blue_settings: {
+    color: '#6B8DB2',
+    fontStyle: 'normal',
+    fontSize: 25,
+    fontWeight: '300',
+  },
   white_25: {
     color: '#FBFBFB',
     fontStyle: 'normal',
     fontSize: 25,
+  },
+  white_30: {
+    color: '#FBFBFB',
+    fontStyle: 'normal',
+    fontSize: 25,
+    fontWeight: 'bold'
   },
   blue_25: {
     color: '#6B8DB2',
@@ -110,6 +122,16 @@ const styles = StyleSheet.create({
   },
 
   // Components
+  //// Onboard
+  onboard_card: {
+    width: 300,
+    height: 50,
+    left: 57,
+    top: 500,
+    borderRadius: 20,
+    margin: 10,
+    position: 'absolute', 
+  },
   //// Home
   cards: {
     width: 300,
@@ -121,6 +143,14 @@ const styles = StyleSheet.create({
   settings_card: {
     width: 364,
     height: 230,
+    borderRadius: 20,
+    paddingTop: 0,
+    paddingLeft: 0,
+    margin: 25,
+  },
+  account_card: {
+    width: 364,
+    height: 400,
     borderRadius: 20,
     paddingTop: 0,
     paddingLeft: 0,
