@@ -6,6 +6,7 @@ import { LinearGradient } from 'expo-linear-gradient';
 import { AntDesign, Feather, MaterialCommunityIcons, FontAwesome } from '@expo/vector-icons';
 
 import styles from '../Styles';
+import Dock from '../components/Dock';
 
 export class HabitTracker extends Component {
   render() {
@@ -14,15 +15,7 @@ export class HabitTracker extends Component {
         <Text style={styles.white_40}>This is the habit tracker screen</Text>
         
         {/* Dock */}
-        <View style={styles.dock_container}>
-          <View style={styles.dock}>
-            <Feather name="home" size={50} color="#FFFFFF" onPress={() => this.props.navigation.navigate('HomeScreen')} />
-            <MaterialCommunityIcons name="calendar-check-outline" size={50} color="#FFFFFF" onPress={() => this.props.navigation.navigate('HabitTrackerScreen')} />
-            <MaterialCommunityIcons name="duck" size={50} color="#FFFFFF" onPress={() => this.props.navigation.navigate('DuckyScreen')} />
-            <FontAwesome name="pencil-square-o" size={50} color="#FFFFFF" onPress={() => this.props.navigation.navigate('JournalScreen')} />
-            <AntDesign name="areachart" size={50} color="#FFFFFF" onPress={() => this.props.navigation.navigate('AnalyticsScreen')} />
-          </View>
-        </View>
+        <Dock navigation={this.props.navigation}/>
 
       </View>
     )
