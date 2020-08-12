@@ -6,7 +6,9 @@ import 'react-native-gesture-handler';
 // import { StackNavigator } from 'react-navigation';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
+//import "typeface-muli";
 
+import Onboard from './screens/Onboard';
 import Home from './screens/Home';
 import Journal from './screens/Journal';
 import JournalEntry from './screens/JournalEntry';
@@ -14,6 +16,11 @@ import HabitTracker from './screens/HabitTracker';
 import Analytics from './screens/Analytics';
 import Ducky from './screens/Ducky';
 import Profile from './screens/Profile';
+import AccountInfo from './screens/AccountInfo';
+import Data from './screens/Data';
+import Notifications from './screens/Notifications';
+import Privacy from './screens/Privacy';
+import Tracker from './screens/Tracker';
 import Dock from './components/Dock';
 import Account from './components/Account';
 
@@ -26,6 +33,10 @@ export default class App extends Component {
          <Stack.Navigator 
           initialRouteName="Home"
           screenOptions={{ headerShown: false}}>
+          <Stack.Screen
+            name="OnboardScreen"
+            component={Onboard}
+          />
           <Stack.Screen
             name="HomeScreen"
             component={Home}
@@ -53,6 +64,26 @@ export default class App extends Component {
           <Stack.Screen
             name="ProfileScreen"
             component={Profile}
+          />
+          <Stack.Screen
+            name="AccountInfoScreen"
+            component={AccountInfo}
+          />
+          <Stack.Screen
+            name="DataScreen"
+            component={Data}
+          />
+          <Stack.Screen
+            name="NotificationsScreen"
+            component={Notifications}
+          />
+          <Stack.Screen
+            name="PrivacyScreen"
+            component={Privacy}
+          />
+          <Stack.Screen
+            name="TrackerScreen"
+            component={Tracker}
           />
         </Stack.Navigator>
       </NavigationContainer>
