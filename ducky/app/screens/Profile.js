@@ -3,7 +3,7 @@
 import React, { Component } from 'react';
 import { View, Text, Button } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
-import { AntDesign, Feather, MaterialCommunityIcons, FontAwesome } from '@expo/vector-icons';
+import { AntDesign, Feather, MaterialCommunityIcons, FontAwesome, Ionicons } from '@expo/vector-icons';
 import { SafeAreaView, ScrollView } from 'react-native';
 
 import styles from '../Styles';
@@ -22,7 +22,7 @@ export class Profile extends Component {
         </View> */}
 
         {/* Profile icon */}
-        <MaterialCommunityIcons name="account-circle" size={50} color="#fff" style={styles.top_right} onPress={() => this.props.navigation.navigate('AccountInfoScreen')}/>
+        {/* <MaterialCommunityIcons name="account-circle" size={50} color="#fff" style={styles.top_right} onPress={() => this.props.navigation.navigate('AccountInfoScreen')}/> */}
 
         {/* Introduction */}
         <View style={{alignItems: 'center', paddingTop: 0}}>
@@ -48,14 +48,14 @@ export class Profile extends Component {
         {/* Cards */}
         <View style={{paddingTop: 90,flexDirection: 'column', justifyContent: 'center'}}>
         
-          {/* Daily Habits */}
+          {/* Settings  */}
           <LinearGradient colors={['#ffffff', '#fbfbfb']} style={styles.settings_card} >
             <View style={{alignItems: 'left', paddingTop: 30, paddingLeft: 20}}>
-              <Text style={styles.blue_settings}>Account</Text>
-              <Text style={styles.blue_settings}>Data</Text>
-              <Text style={styles.blue_settings}>Notifications</Text>
-              <Text style={styles.blue_settings}>Privacy Settings</Text>
-              <Text style={styles.blue_settings}>Tracker Settings</Text>
+              <Text style={styles.blue_settings} onPress={() => this.props.navigation.navigate('AccountInfoScreen')}>Account</Text>
+              <Text style={styles.blue_settings} onPress={() => this.props.navigation.navigate('DataScreen')}>Data</Text>
+              <Text style={styles.blue_settings} onPress={() => this.props.navigation.navigate('NotificationsScreen')}>Notifications</Text>
+              <Text style={styles.blue_settings} onPress={() => this.props.navigation.navigate('PrivacyScreen')}>Privacy Settings</Text>
+              <Text style={styles.blue_settings} onPress={() => this.props.navigation.navigate('TrackerScreen')}>Tracker Settings</Text>
             </View>
           </LinearGradient>
 

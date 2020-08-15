@@ -18,12 +18,13 @@ export class Onboard extends Component {
         </View>
 
         {/* Account */}
-        <MaterialCommunityIcons name="account-circle" size={50} color="#fff" style={styles.top_right} onPress={() => this.props.navigation.navigate('HomeScreen')}/>
+        {/* <MaterialCommunityIcons name="account-circle" size={50} color="#fff" style={styles.top_right} onPress={() => this.props.navigation.navigate('HomeScreen')}/> */}
 
         {/* Onboard */}
           <LinearGradient colors={['#ffffff', '#fbfbfb']} style={styles.onboard_card} >
-            <View style={{alignItems: 'center', paddingTop:10}}>
-              <Text style={styles.blue_settings}>Let's get started</Text>
+            <View style={{alignItems: 'center', paddingTop:10}} onPress={() => this.props.navigation.navigate('HomeScreen')}>
+              <Text style={styles.blue_settings} onPress={() => this.props.navigation.navigate('HomeScreen')}>Let's get started</Text>
+              {/* <Button title="Let's get started"  onPress={() => this.props.navigation.navigate('HomeScreen')} color="#6B8DB2" style={styles.blue_settings}/> */}
             </View>
           </LinearGradient>
 

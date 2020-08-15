@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { View, Text, Button } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
-import { AntDesign, Feather, MaterialCommunityIcons, FontAwesome } from '@expo/vector-icons';
+import { AntDesign, Feather, MaterialCommunityIcons, FontAwesome, Ionicons } from '@expo/vector-icons';
 
 import styles from '../Styles';
 
@@ -11,9 +11,9 @@ export class AccountInfo extends Component {
       <LinearGradient colors={['#aec9eb', 'rgba(174, 201, 235, 0.75)']} style={styles.container}>
 
         {/* Back Button */}
-        {/* <View style={styles.top_left}>
-          <Ionicons name="ios-arrow-back" size={25} color="#ffffff" />
-        </View> */}
+        <View style={styles.top_left}>
+            <Ionicons name="ios-arrow-back" size={25} color="#ffffff" onPress={ () => this.props.navigation.goBack() }/>
+        </View>
 
         {/* Profile icon */}
         <MaterialCommunityIcons name="account-circle" size={50} color="#fff" style={styles.top_right} onPress={() => this.props.navigation.navigate('DataScreen')}/>
