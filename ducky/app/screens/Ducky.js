@@ -9,7 +9,6 @@ import styles from '../Styles';
 import Dock from '../components/Dock';
 
 export class Ducky extends Component {
-
   constructor() {
     super();
 

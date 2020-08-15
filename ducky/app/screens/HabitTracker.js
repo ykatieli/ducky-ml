@@ -11,13 +11,17 @@ import Dock from '../components/Dock';
 export class HabitTracker extends Component {
   render() {
     return (
-      <View style={styles.container}>
-        <Text style={styles.white_40}>This is the habit tracker screen</Text>
-        
-        {/* Dock */}
+    	<LinearGradient colors={['#aec9eb', 'rgba(174, 201, 235, 0.75)']} style={styles.container}>
+
+	      {/* Habit Tracker */}
+          <View style={styles.header}>
+            <Text style={styles.white_40}>Habit Tracker</Text>
+          </View>
+
+     	{/* Dock */}
         <Dock navigation={this.props.navigation}/>
 
-      </View>
+      </LinearGradient>
     )
   }
 }

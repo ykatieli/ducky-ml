@@ -4,6 +4,7 @@ import React, { Component } from 'react';
 import { View, Text, Button } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import { AntDesign, Feather, MaterialCommunityIcons, FontAwesome, Ionicons } from '@expo/vector-icons';
+import InputScrollView from 'react-native-input-scroll-view';
 
 import styles from '../Styles';
 import Dock from '../components/Dock';
@@ -11,6 +12,7 @@ import Dock from '../components/Dock';
 export class Analytics extends Component {
   render() {
     return (
+      <InputScrollView>
       <LinearGradient style={styles.container} colors={['#6B8DB2', '#7998B9']}>
   
         {/* Top text */}
@@ -80,17 +82,16 @@ export class Analytics extends Component {
           <View style={{alignContent: 'center', justifyContent: 'center', paddingTop: 30}}>
             <Text style={{color: '#fbfbfb', fontSize: 15, fontStyle: 'italic'}}>Keep going, you're doing great! :-)</Text>
           </View>
+
+        </View>
+       
+        <View style={{position: 'absolute', left: 0, right: 0, bottom: 30}}>
+          {/* Dock - isn't locked properly yet*/}
+          <Dock navigation={this.props.navigation}/>
         </View>
 
-        
-
-
-
-       
-        {/* Dock */}
-        <Dock navigation={this.props.navigation}/>
-
       </LinearGradient>
+    </InputScrollView>
     )
   }
 }

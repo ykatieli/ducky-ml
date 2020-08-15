@@ -166,6 +166,11 @@ const styles = StyleSheet.create({
     paddingLeft: 0,
     margin: 25,
   },
+  profile: {
+    width: 100,
+    height: 100,
+    borderRadius: 20,
+  },
   //// Dock
   dock_container: {
     width: 414, 
@@ -185,21 +190,6 @@ const styles = StyleSheet.create({
     width: 50,
     height: 50,
   },
-  // account_container: {
-  //   width: 200, 
-  //   height: 100, 
-  //   backgroundColor: '#AEC9EB', 
-  //   position: 'absolute', 
-  //   bottom: 0,
-  //   flex: 1,
-  //   alignContent: 'center',
-  //   justifyContent: 'center'
-  // },
-  // account: {
-  //   flexDirection: 'row',
-  //   justifyContent: 'space-evenly',
-  // },
-  //// Journal
   journal_cards: {
     width: 140,
     height: 180,
