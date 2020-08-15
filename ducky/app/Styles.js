@@ -138,6 +138,10 @@ const styles = StyleSheet.create({
     margin: 10,
     position: 'absolute', 
   },
+  ducky_logo: {
+    width: 150,
+    height: 150,
+  },
   //// Home
   cards: {
     width: 300,

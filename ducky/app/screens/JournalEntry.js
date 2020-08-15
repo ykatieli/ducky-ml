@@ -128,8 +128,6 @@ export class JournalEntry extends Component {
     // CHANGE: hardcoded now
     this.setState({entryTitle: "New Entry"});
 
-    
-
 
     if (!firebase.apps.length){
       firebase.initializeApp(config);

@@ -1,7 +1,7 @@
 // Dock.js
 
 import React, { Component } from 'react';
-import { View, Text, Button } from 'react-native';
+import { View, Image, Text, Button } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import { AntDesign, Feather, MaterialCommunityIcons, FontAwesome } from '@expo/vector-icons';
 
