@@ -15,9 +15,6 @@ export class AccountInfo extends Component {
             <Ionicons name="ios-arrow-back" size={25} color="#ffffff" onPress={ () => this.props.navigation.goBack() }/>
         </View>
 
-        {/* Profile icon */}
-        <MaterialCommunityIcons name="account-circle" size={50} color="#fff" style={styles.top_right} onPress={() => this.props.navigation.navigate('DataScreen')}/>
-
         {/* Introduction */}
         <View style={{alignItems: 'center', paddingTop: 0}}>
         <Text style={styles.white_40}>Account</Text>
