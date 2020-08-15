@@ -181,6 +181,10 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-evenly',
   },
+  dock_icon: {
+    width: 50,
+    height: 50,
+  },
   // account_container: {
   //   width: 200, 
   //   height: 100, 
