@@ -15,8 +15,9 @@ export class Dock extends Component {
         <View style={styles.dock}>
           <Feather name="home" size={50} color="#FFFFFF" onPress={() => this.props.navigation.navigate('HomeScreen')} />
           <MaterialCommunityIcons name="calendar-check-outline" size={50} color="#FFFFFF" onPress={() => this.props.navigation.navigate('HabitTrackerScreen')} />
-          <TouchableOpacity onPress={() => this.props.navigation.navigate('DuckyScreen')}>
-            <Image style={styles.dock_icon} source={require('../../assets/logo.png')} ></Image>
+          {/* <MaterialCommunityIcons name="duck" size={50} color="#FFFFFF" onPress={() => this.props.navigation.navigate('DuckyScreen')} /> */}
+          <TouchableOpacity activeOpacity={1} onPress={() => this.props.navigation.navigate('DuckyScreen')}>
+            <Image style={styles.dock_icon} source={require('../../assets/logo.png')}></Image>
           </TouchableOpacity>
           <FontAwesome name="pencil-square-o" size={50} color="#FFFFFF" onPress={() => this.props.navigation.navigate('JournalScreen')} />
           <AntDesign name="areachart" size={50} color="#FFFFFF" onPress={() => this.props.navigation.navigate('AnalyticsScreen')} />
