@@ -9,6 +9,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 //import "typeface-muli";
 
 import Onboard from './screens/Onboard';
+import Name from './screens/Name';
 import Home from './screens/Home';
 import Journal from './screens/Journal';
 import JournalEntry from './screens/JournalEntry';
@@ -30,6 +31,7 @@ import { useFonts, Muli_400Regular} from '@expo-google-fonts/muli';
 
 const Stack = createStackNavigator();
 
+<<<<<<< HEAD
 // export default class App extends Component {
   // render() {
 function App() {
@@ -40,6 +42,74 @@ function App() {
 
   if (!fontsLoaded) {
     return <AppLoading />;
+=======
+export default class App extends Component {
+  render() {
+    return (
+      <NavigationContainer>
+         <Stack.Navigator 
+          initialRouteName="Home"
+          screenOptions={{ headerShown: false}}>
+          <Stack.Screen
+            name="OnboardScreen"
+            component={Onboard}
+          />
+          <Stack.Screen
+            name="NameScreen"
+            component={Name}
+          />
+          <Stack.Screen
+            name="HomeScreen"
+            component={Home}
+          />
+          <Stack.Screen
+            name="JournalScreen"
+            component={Journal}
+          />
+          <Stack.Screen
+            name="JournalEntryScreen"
+            component={JournalEntry}
+          />
+          <Stack.Screen
+            name="HabitTrackerScreen"
+            component={HabitTracker}
+          />
+          <Stack.Screen
+            name="AnalyticsScreen"
+            component={Analytics}
+          />
+          <Stack.Screen
+            name="DuckyScreen"
+            component={Ducky}
+          />
+          <Stack.Screen
+            name="ProfileScreen"
+            component={Profile}
+          />
+          <Stack.Screen
+            name="AccountInfoScreen"
+            component={AccountInfo}
+          />
+          <Stack.Screen
+            name="DataScreen"
+            component={Data}
+          />
+          <Stack.Screen
+            name="NotificationsScreen"
+            component={Notifications}
+          />
+          <Stack.Screen
+            name="PrivacyScreen"
+            component={Privacy}
+          />
+          <Stack.Screen
+            name="TrackerScreen"
+            component={Tracker}
+          />
+        </Stack.Navigator>
+      </NavigationContainer>
+    )
+>>>>>>> ac1c8abbc570fa9a459db9b967b249b26e7cd207
   }
 
   return (
