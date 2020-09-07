@@ -9,6 +9,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 //import "typeface-muli";
 
 import Onboard from './screens/Onboard';
+import Name from './screens/Name';
 import Home from './screens/Home';
 import Journal from './screens/Journal';
 import JournalEntry from './screens/JournalEntry';
@@ -40,7 +41,6 @@ function App() {
 
   if (!fontsLoaded) {
     return <AppLoading />;
-  }
 
   return (
     <NavigationContainer>
