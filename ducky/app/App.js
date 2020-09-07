@@ -42,7 +42,7 @@ function App() {
   if (!fontsLoaded) {
     return <AppLoading />;
   }
-  
+
   return (
     <NavigationContainer>
         <Stack.Navigator 
@@ -99,6 +99,10 @@ function App() {
         <Stack.Screen
           name="TrackerScreen"
           component={Tracker}
+        />
+        <Stack.Screen
+          name="NameScreen"
+          component={Name}
         />
       </Stack.Navigator>
     </NavigationContainer>
