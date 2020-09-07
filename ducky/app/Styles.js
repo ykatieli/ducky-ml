@@ -6,74 +6,88 @@ const styles = StyleSheet.create({
 
   // Text
   yellow_75: {
+    fontFamily: 'Muli_400Regular',
     color: '#f9e067',
     fontSize: 75,
     fontWeight: 'bold'
   },
   white_45: {
+    fontFamily: 'Muli_400Regular',
     color: '#fbfbfb', 
     fontSize: 45,
     fontWeight: 'bold'
   },
   yellow_45: {
+    fontFamily: 'Muli_400Regular',
     color: '#f9e067',
     fontSize: 45,
     fontWeight: 'bold'
   },
   white_40: {
+    fontFamily: 'Muli_400Regular',
     color: '#FBFBFB',
     fontStyle: 'normal',
     fontSize: 40,
     fontWeight: 'bold',
   },
   blue_settings: {
+    fontFamily: 'Muli_400Regular',
     color: '#6B8DB2',
     fontStyle: 'normal',
     fontSize: 25,
     fontWeight: '300',
   },
   white_25: {
+    fontFamily: 'Muli_400Regular',
     color: '#FBFBFB',
     fontStyle: 'normal',
     fontSize: 25,
     fontWeight: '600',
   },
   white_30: {
+    fontFamily: 'Muli_400Regular',
     color: '#FBFBFB',
     fontStyle: 'normal',
     fontSize: 25,
     fontWeight: 'bold'
   },
   blue_25: {
+    fontFamily: 'Muli_400Regular',
     color: '#6B8DB2',
     fontStyle: 'normal',
     fontSize: 25,
     fontWeight: '600',
   },
   white_20: {
+    fontFamily: 'Muli_400Regular',
     color: '#fbfbfb',
     fontStyle: 'normal',
     fontSize: 20,
   },
   blue_20: {
+    fontFamily: 'Muli_400Regular',
     color: '#6B8DB2',
     fontStyle: 'normal',
     fontSize: 20,
   },
   blue_18: {
+    fontFamily: 'Muli_400Regular',
     color: '#718399',
     fontSize: 18,
   },
   white_15: {
+    fontFamily: 'Muli_400Regular',
     color: '#FBFBFB',
     fontStyle: 'normal',
     fontSize: 15,
   },
   blue_15: {
+    fontFamily: 'Muli_400Regular',
     color: '#718399',
     fontSize: 15,
   },
   white_12: {
+    fontFamily: 'Muli_400Regular',
     color: '#FBFBFB',
     fontStyle: 'normal',
     fontSize: 12,
