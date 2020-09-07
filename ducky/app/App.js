@@ -31,10 +31,6 @@ import { useFonts, Muli_400Regular} from '@expo-google-fonts/muli';
 
 const Stack = createStackNavigator();
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> b35fc012e0543b400e0a3ca134192d8fe6c83dd0
 // export default class App extends Component {
   // render() {
 function App() {
@@ -45,79 +41,8 @@ function App() {
 
   if (!fontsLoaded) {
     return <AppLoading />;
-<<<<<<< HEAD
-=======
-export default class App extends Component {
-  render() {
-    return (
-      <NavigationContainer>
-         <Stack.Navigator 
-          initialRouteName="Home"
-          screenOptions={{ headerShown: false}}>
-          <Stack.Screen
-            name="OnboardScreen"
-            component={Onboard}
-          />
-          <Stack.Screen
-            name="NameScreen"
-            component={Name}
-          />
-          <Stack.Screen
-            name="HomeScreen"
-            component={Home}
-          />
-          <Stack.Screen
-            name="JournalScreen"
-            component={Journal}
-          />
-          <Stack.Screen
-            name="JournalEntryScreen"
-            component={JournalEntry}
-          />
-          <Stack.Screen
-            name="HabitTrackerScreen"
-            component={HabitTracker}
-          />
-          <Stack.Screen
-            name="AnalyticsScreen"
-            component={Analytics}
-          />
-          <Stack.Screen
-            name="DuckyScreen"
-            component={Ducky}
-          />
-          <Stack.Screen
-            name="ProfileScreen"
-            component={Profile}
-          />
-          <Stack.Screen
-            name="AccountInfoScreen"
-            component={AccountInfo}
-          />
-          <Stack.Screen
-            name="DataScreen"
-            component={Data}
-          />
-          <Stack.Screen
-            name="NotificationsScreen"
-            component={Notifications}
-          />
-          <Stack.Screen
-            name="PrivacyScreen"
-            component={Privacy}
-          />
-          <Stack.Screen
-            name="TrackerScreen"
-            component={Tracker}
-          />
-        </Stack.Navigator>
-      </NavigationContainer>
-    )
->>>>>>> ac1c8abbc570fa9a459db9b967b249b26e7cd207
   }
-=======
->>>>>>> b35fc012e0543b400e0a3ca134192d8fe6c83dd0
-
+  
   return (
     <NavigationContainer>
         <Stack.Navigator 
