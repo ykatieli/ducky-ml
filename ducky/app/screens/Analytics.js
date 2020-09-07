@@ -1,7 +1,7 @@
 // Analytics.js
 
 import React, { Component } from 'react';
-import { View, Text, Button, ScrollView, SafeAreaView } from 'react-native';
+import { View, Text, Button } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import { AntDesign, Feather, MaterialCommunityIcons, FontAwesome, Ionicons } from '@expo/vector-icons';
 import InputScrollView from 'react-native-input-scroll-view';
@@ -12,9 +12,7 @@ import Dock from '../components/Dock';
 export class Analytics extends Component {
   render() {
     return (
-      // <InputScrollView>
-      <SafeAreaView>
-        <ScrollView>
+      <InputScrollView>
       <LinearGradient style={styles.container} colors={['#6B8DB2', '#7998B9']}>
   
         {/* Top text */}
@@ -86,18 +84,14 @@ export class Analytics extends Component {
           </View>
 
         </View>
-        </LinearGradient>
-
-        </ScrollView>
        
         <View style={{position: 'absolute', left: 0, right: 0, bottom: 30}}>
           {/* Dock - isn't locked properly yet*/}
           <Dock navigation={this.props.navigation}/>
         </View>
 
-      
-      </SafeAreaView>
-    // </InputScrollView>
+      </LinearGradient>
+    </InputScrollView>
     )
   }
 }
