@@ -32,6 +32,9 @@ import { useFonts, Muli_400Regular} from '@expo-google-fonts/muli';
 const Stack = createStackNavigator();
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> b35fc012e0543b400e0a3ca134192d8fe6c83dd0
 // export default class App extends Component {
   // render() {
 function App() {
@@ -42,6 +45,7 @@ function App() {
 
   if (!fontsLoaded) {
     return <AppLoading />;
+<<<<<<< HEAD
 =======
 export default class App extends Component {
   render() {
@@ -111,6 +115,8 @@ export default class App extends Component {
     )
 >>>>>>> ac1c8abbc570fa9a459db9b967b249b26e7cd207
   }
+=======
+>>>>>>> b35fc012e0543b400e0a3ca134192d8fe6c83dd0
 
   return (
     <NavigationContainer>
