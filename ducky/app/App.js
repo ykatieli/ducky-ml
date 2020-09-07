@@ -9,6 +9,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 //import "typeface-muli";
 
 import Onboard from './screens/Onboard';
+import Name from './screens/Name';
 import Home from './screens/Home';
 import Journal from './screens/Journal';
 import JournalEntry from './screens/JournalEntry';
@@ -36,6 +37,10 @@ export default class App extends Component {
           <Stack.Screen
             name="OnboardScreen"
             component={Onboard}
+          />
+          <Stack.Screen
+            name="NameScreen"
+            component={Name}
           />
           <Stack.Screen
             name="HomeScreen"
