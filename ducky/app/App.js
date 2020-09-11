@@ -53,6 +53,10 @@ function App() {
           component={Onboard}
         />
         <Stack.Screen
+          name="NameScreen"
+          component={Onboard}
+        />
+        <Stack.Screen
           name="HomeScreen"
           component={Home}
         />
@@ -99,10 +103,6 @@ function App() {
         <Stack.Screen
           name="TrackerScreen"
           component={Tracker}
-        />
-        <Stack.Screen
-          name="NameScreen"
-          component={Name}
         />
       </Stack.Navigator>
     </NavigationContainer>
