@@ -12,9 +12,9 @@ import Dock from '../components/Dock';
 export class Analytics extends Component {
   render() {
     return (
+    
+    <LinearGradient style={styles.container} colors={['#6B8DB2', '#7998B9']}>
       <InputScrollView>
-      <LinearGradient style={styles.container} colors={['#6B8DB2', '#7998B9']}>
-  
         {/* Top text */}
         <View style={{paddingLeft: 30, paddingRight: 30}}>
           <View>
@@ -85,13 +85,16 @@ export class Analytics extends Component {
 
         </View>
        
+        </InputScrollView>
+        
         <View style={{position: 'absolute', left: 0, right: 0, bottom: 30}}>
           {/* Dock - isn't locked properly yet*/}
           <Dock navigation={this.props.navigation}/>
         </View>
 
+        
       </LinearGradient>
-    </InputScrollView>
+    
     )
   }
 }
