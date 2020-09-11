@@ -10,7 +10,66 @@ import InputScrollView from 'react-native-input-scroll-view';
 import styles from '../Styles';
 import Dock from '../components/Dock';
 
+import firebase from 'firebase';
+
+var config = {
+  apiKey: "AIzaSyCeTrtwF_hjGoHeZZlYOYI1CpxbKuW7twg",
+  authDomain: "ducky-ml.firebaseapp.com",
+  databaseURL: "https://ducky-ml.firebaseio.com",
+  projectId: "ducky-ml",
+  storageBucket: "ducky-ml.appspot.com",
+  messagingSenderId: "1096270328273"
+};
+
+var name;
+var id;
+var daysOnDucky;
+var daysHabit;
+var daysOnJournal;
+var totalPoints;
+
 export class Profile extends Component {
+  constructor(){
+    super();
+
+    if (!firebase.apps.length){
+      firebase.initializeApp(config);
+    }
+
+    var database = firebase.database();
+
+    database.ref('/users/haylee/acctInfo/recent/ID').once('value', function(snapshot){
+      console.log(snapshot.val());
+      id = snapshot.val()
+    });
+
+    database.ref('/users/haylee/acctInfo/recent/Name').once('value', function(snapshot){
+      console.log(snapshot.val());
+      name = snapshot.val()
+    });
+
+    database.ref('/users/haylee/acctInfo/recent/daysOnDucky').once('value', function(snapshot){
+      console.log(snapshot.val());
+      daysOnDucky = snapshot.val()
+    });
+
+    database.ref('/users/haylee/acctInfo/recent/daysOnJournal').once('value', function(snapshot){
+      console.log(snapshot.val());
+      daysOnJournal = snapshot.val()
+    });
+
+    database.ref('/users/haylee/acctInfo/recent/totalPoints').once('value', function(snapshot){
+      console.log(snapshot.val());
+      totalPoints = snapshot.val()
+    });
+
+    database.ref('/users/haylee/acctInfo/recent/daysHabit').once('value', function(snapshot){
+      console.log(snapshot.val());
+      daysHabit = snapshot.val()
+    });
+
+  }
+
   render() {
     return (
       // <SafeAreaView style={styles.container}>
@@ -29,7 +88,7 @@ export class Profile extends Component {
 
         <View style={{alignItems: 'center', paddingTop: 10}}>
         <Text style={styles.white_20}>Haley Lee</Text>
-        <Text style={styles.white_12}>ID: haleylee</Text>
+        <Text style={styles.white_12}>ID: </Text>
         </View>
 
       {/* Stats */}
@@ -108,3 +167,4 @@ export class Profile extends Component {
 
 
 export default Profile;
+

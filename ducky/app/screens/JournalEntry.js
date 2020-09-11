@@ -54,119 +54,124 @@ export class JournalEntry extends Component {
     this.createEntry = this.createEntry.bind(this);
   }
 
-  // componentWillMount() {
+  componentWillMount() {
     
-  //   var date = new Date().getDate();
-  //   var month = new Date().getMonth() + 1;
-  //   var year = new Date().getFullYear();
+    var month = new Date().getMonth() + 1;
+    var year = new Date().getFullYear();
 
-  //   var fullMonth;
+    var fullMonth;
 
-  //   switch (month) {
-  //     case 1:
-  //       fullMonth = 'January';
-  //       break;
-  //     case 2:
-  //       fullMonth = 'February';
-  //       break;
-  //     case 3:
-  //       fullMonth = 'March';
-  //       break;
-  //     case 4:
-  //       fullMonth = 'April';
-  //       break;
-  //     case 5:
-  //       fullMonth = 'May';
-  //       break;
-  //     case 6:
-  //       fullMonth = 'June';
-  //       break;
-  //     case 7:
-  //       fullMonth = 'July';
-  //       break;
-  //     case 8:
-  //       fullMonth = 'August';
-  //       break;
-  //     case 9:
-  //       fullMonth = 'September';
-  //       break;
-  //     case 10:
-  //       fullMonth = 'October';
-  //       break;
-  //     case 11:
-  //       fullMonth = 'November';
-  //       break;
-  //     case 12:
-  //       fullMonth = 'December';
-  //       break;
-  //     default:
-  //       fullMonth = 'Error';
-  //   }
+    switch (month) {
+      case 1:
+        fullMonth = 'January';
+        break;
+      case 2:
+        fullMonth = 'February';
+        break;
+      case 3:
+        fullMonth = 'March';
+        break;
+      case 4:
+        fullMonth = 'April';
+        break;
+      case 5:
+        fullMonth = 'May';
+        break;
+      case 6:
+        fullMonth = 'June';
+        break;
+      case 7:
+        fullMonth = 'July';
+        break;
+      case 8:
+        fullMonth = 'August';
+        break;
+      case 9:
+        fullMonth = 'September';
+        break;
+      case 10:
+        fullMonth = 'October';
+        break;
+      case 11:
+        fullMonth = 'November';
+        break;
+      case 12:
+        fullMonth = 'December';
+        break;
+      default:
+        fullMonth = 'Error';
+    }
 
   
-  //   // set date state here
-  //   this.setState({ date: fullMonth + ' ' + date + ', ' + year });
+    // set date state here
+    this.setState({ date: fullMonth + ' ' + date + ', ' + year });
 
-  //   var hours = new Date().getHours();
-  //   var min = new Date().getMinutes();
+    var date = new Date().getDate();
+    var hours = new Date().getHours();
+    var min = new Date().getMinutes();
     
-  //   min = (min<10?'0':'') + min;
+    min = (min<10?'0':'') + min;
 
-  //   if (hours <= 12 || hours === 24) {
-  //     if (hours === 24) hours = 12;
-  //     this.setState({ time: hours + ':' + min + ' am' });
-  //   }
-  //   else {
-  //     hours = (hours == 12) ? hours : hours - 12;
-  //     this.setState({ time: hours + ':' + min + ' pm' });
-  //   }
+    if (hours <= 12 || hours === 24) {
+      if (hours === 24) hours = 12;
+      this.setState({ time: hours + ':' + min + ' am' });
+    }
+    else {
+      hours = (hours == 12) ? hours : hours - 12;
+      this.setState({ time: hours + ':' + min + ' pm' });
+    }
 
-  //   //set entry state here
-  //   // CHANGE: expEntry to text put into the journal entry
-  //   this.setState({entry: expEntry});
+    //set entry state here
+    // CHANGE: expEntry to text put into the journal entry
+    this.setState({entry: expEntry});
 
-  //   // CHANGE: hardcoded now
-  //   this.setState({entryTitle: "New Entry"});
+    // CHANGE: hardcoded now
+    this.setState({entryTitle: "New Entry"});
 
 
-  //   if (!firebase.apps.length){
-  //     firebase.initializeApp(config);
-  //   }
+    if (!firebase.apps.length){
+      firebase.initializeApp(config);
+    }
 
-  //   // To select data from firebase every time data has changed !
-  //   // Utilize the current database to fill in journal information
-  //   firebase.database().ref('users/').on('value', (data) => {
-  //       console.log(data.toJSON());
-  //   })
+    // To select data from firebase every time data has changed !
+    // Utilize the current database to fill in journal information
+    firebase.database().ref('users/').on('value', (data) => {
+        console.log(data.toJSON());
+    })
 
-  //   // To Await 5 seconds to insert a new user
-  //   // CHANGE: expUser to specific user
-  //   setTimeout(() => {
-  //       firebase.database().ref('users/expUser/' + Date.now().toString()).set(
-  //           {
-  //               entryTitle: this.state.entryTitle,
-  //               entry: this.state.entry,
-  //               time: this.state.time,
-  //               date: this.state.date,
-  //               tags: this.state.tags
-  //           }
-  //       ).then(() => {
-  //           console.log('INSERTED !');
-  //       }).catch((error) => {
-  //           console.log(error);
-  //       });
-  //   }, 10000);
-  //   // change this depending on how quickly you want it processed
 
-  //   // // To Update a user
-  //   // firebase.database().ref('users/004').update({
-  //   //     name: 'Pheng Sengvuthy'
-  //   // });
+    var timeStamp = date.toString().concat(hours.toString(), min.toString())
 
-  //   // // To Remove a user
-  //   // firebase.database().ref('users/004').remove();
+    // To Await 5 seconds to insert a new user
+    // CHANGE: expUser to specific user
+    setTimeout(() => {
+        firebase.database().ref('users/haylee/entries/' + timeStamp).set(
+            {
+                entryTitle: this.state.entryTitle,
+                entry: this.state.entry,
+                time: this.state.time,
+                date: this.state.date,
+                tags: this.state.tags
+            }
+        ).then(() => {
+            console.log('INSERTED !');
+        }).catch((error) => {
+            console.log(error);
+        });
+    }, 10000);
+    // change this depending on how quickly you want it processed
 
-  // }
+
+
+    // // To Update a user
+    // firebase.database().ref('users/004').update({
+    //     name: 'Pheng Sengvuthy'
+    // });
+
+    // // To Remove a user
+    // firebase.database().ref('users/004').remove();
+
+  }
 
   componentDidMount() {
 
