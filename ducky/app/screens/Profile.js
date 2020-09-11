@@ -15,9 +15,10 @@ export class Profile extends Component {
     return (
       // <SafeAreaView style={styles.container}>
       // <ScrollView style={styles.scrollView}>
-      <InputScrollView>
+      
       <LinearGradient colors={['#aec9eb', 'rgba(174, 201, 235, 0.75)']} style={styles.container}>
-
+      <InputScrollView>
+      
         {/* Introduction */}
         <View style={{alignItems: 'center', paddingTop: 0}}>
         <Text style={styles.white_40}>Profile</Text>
@@ -97,11 +98,12 @@ export class Profile extends Component {
         </LinearGradient>
 
         </View>
+        </InputScrollView>
 
         {/* Dock */}
         <Dock navigation={this.props.navigation}/>
       </LinearGradient>
-    </InputScrollView>
+    
     )
   }
 }

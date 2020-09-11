@@ -87,10 +87,9 @@ export class Analytics extends Component {
        
         </InputScrollView>
         
-        <View style={{position: 'absolute', left: 0, right: 0, bottom: 30}}>
           {/* Dock - isn't locked properly yet*/}
           <Dock navigation={this.props.navigation}/>
-        </View>
+
 
         
       </LinearGradient>
