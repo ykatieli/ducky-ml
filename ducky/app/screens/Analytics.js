@@ -1,7 +1,7 @@
 // Analytics.js
 
 import React, { Component } from 'react';
-import { View, Text, Button } from 'react-native';
+import { View, Text, Button, Image } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import { AntDesign, Feather, MaterialCommunityIcons, FontAwesome, Ionicons } from '@expo/vector-icons';
 import InputScrollView from 'react-native-input-scroll-view';
@@ -47,24 +47,25 @@ export class Analytics extends Component {
         {/* Cards */}
         <View style={{alignItems: 'center', justifyContent: 'center', paddingTop: 30, }}>
           {/* Habit Tracker */}
-          <View style={styles.analytics_card}>
+          {/* <View style={styles.analytics_card}>
             <Text style={styles.blue_25}>Habit Tracker</Text>
-          </View>
+          </View> */}
 
           {/* Emotion Map */}
           <View style={styles.analytics_card}>
             <Text style={styles.blue_25}>Emotion Map</Text>
+            <Image style={{width: 350, height: 200}} source = {require('../../assets/Chart.png')}></Image>
           </View>
 
           {/* Top Habits */}
-          <View style={styles.analytics_card}>
+          {/* <View style={styles.analytics_card}>
             <Text style={styles.blue_25}>Top Habits</Text>
-          </View>
+          </View> */}
 
           {/* Your Best Memory */}
-          <View style={styles.analytics_card}>
+          {/* <View style={styles.analytics_card}>
             <Text style={styles.blue_25}>Your Best Memory</Text>
-          </View>
+          </View> */}
 
           {/* Stats */}
           <View style={{flexDirection: 'row', paddingLeft: 30, paddingRight: 30, alignContent: 'center', }}>

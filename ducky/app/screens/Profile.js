@@ -88,17 +88,17 @@ export class Profile extends Component {
         </View>
 
         <View style={{alignItems: 'center', paddingTop: 10}}>
-        <Text style={styles.white_20}>Haley Lee</Text>
-        <Text style={styles.white_12}>ID: </Text>
+        <Text style={styles.white_20}>{name}</Text>
+        <Text style={styles.white_12}>{id} </Text>
         </View>
 
       {/* Stats */}
         <LinearGradient colors={['#ffffff', '#fbfbfb']} style={styles.settings_card} >
           <View style={{alignItems: 'left', paddingTop: 30, paddingLeft: 20}}>
-            <Text style={styles.blue_settings}># of days on Ducky</Text>
-            <Text style={styles.blue_settings}># of days habits tracked</Text>
-            <Text style={styles.blue_settings}># of days journaled</Text>
-            <Text style={styles.blue_settings}># of points</Text>
+            <Text style={styles.blue_settings}># of days on Ducky: {daysOnDucky}</Text>
+            <Text style={styles.blue_settings}># of days habits tracked: {daysHabit}</Text>
+            <Text style={styles.blue_settings}># of days journaled: {daysOnJournal}</Text>
+            <Text style={styles.blue_settings}># of points: {totalPoints}</Text>
           </View>
         </LinearGradient>
 
