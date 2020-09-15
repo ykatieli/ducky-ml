@@ -54,7 +54,7 @@ function App() {
         />
         <Stack.Screen
           name="NameScreen"
-          component={Onboard}
+          component={Name}
         />
         <Stack.Screen
           name="HomeScreen"

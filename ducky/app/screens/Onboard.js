@@ -19,7 +19,7 @@ export class Onboard extends Component {
         {/* Onboard */}
         <LinearGradient colors={['#ffffff', '#fbfbfb']} style={styles.onboard_card} >
             <View style={{alignItems: 'center', paddingTop:10}} onPress={() => this.props.navigation.navigate('NameScreen')}>
-              <Text style={[styles.blue_settings, {alignContent: 'center', justifyContent: 'center'}]} onPress={() => this.props.navigation.navigate('HomeScreen')}>Let's get started</Text>
+              <Text style={[styles.blue_settings, {alignContent: 'center', justifyContent: 'center'}]} onPress={() => this.props.navigation.navigate('NameScreen')}>Let's get started</Text>
             </View>
           </LinearGradient>
         </View>
