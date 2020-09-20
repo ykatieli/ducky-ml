@@ -24,53 +24,42 @@ var config = {
 var name;
 var id;
 var daysOnDucky;
-var daysHabit;
 var daysOnJournal;
-var totalPoints;
+
+if (!firebase.apps.length){
+  firebase.initializeApp(config);
+}
+
+var database = firebase.database();
+
+database.ref('/users/haylee/acctInfo/recent/ID').once('value', function(snapshot){
+  //console.log(snapshot.val());
+  id = snapshot.val()
+});
+
+database.ref('/users/haylee/acctInfo/recent/Name').once('value', function(snapshot){
+  console.log(snapshot.val());
+  name = snapshot.val()
+});
+
+database.ref('/users/haylee/acctInfo/recent/daysOnDucky').once('value', function(snapshot){
+  //console.log(snapshot.val());
+  daysOnDucky = snapshot.val()
+});
+
+database.ref('/users/haylee/acctInfo/recent/daysOnJournal').once('value', function(snapshot){
+  //console.log(snapshot.val());
+  daysOnJournal = snapshot.val()
+});
 
 export class Profile extends Component {
-  constructor(){
-    super();
-
-    if (!firebase.apps.length){
-      firebase.initializeApp(config);
-    }
-
-    var database = firebase.database();
-
-    database.ref('/users/haylee/acctInfo/recent/ID').once('value', function(snapshot){
-      console.log(snapshot.val());
-      id = snapshot.val()
-    });
+  render() {
 
     database.ref('/users/haylee/acctInfo/recent/Name').once('value', function(snapshot){
       console.log(snapshot.val());
       name = snapshot.val()
     });
 
-    database.ref('/users/haylee/acctInfo/recent/daysOnDucky').once('value', function(snapshot){
-      console.log(snapshot.val());
-      daysOnDucky = snapshot.val()
-    });
-
-    database.ref('/users/haylee/acctInfo/recent/daysOnJournal').once('value', function(snapshot){
-      console.log(snapshot.val());
-      daysOnJournal = snapshot.val()
-    });
-
-    database.ref('/users/haylee/acctInfo/recent/totalPoints').once('value', function(snapshot){
-      console.log(snapshot.val());
-      totalPoints = snapshot.val()
-    });
-
-    database.ref('/users/haylee/acctInfo/recent/daysHabit').once('value', function(snapshot){
-      console.log(snapshot.val());
-      daysHabit = snapshot.val()
-    });
-
-  }
-
-  render() {
     return (
       // <SafeAreaView style={styles.container}>
       // <ScrollView style={styles.scrollView}>
@@ -96,9 +85,9 @@ export class Profile extends Component {
         <LinearGradient colors={['#ffffff', '#fbfbfb']} style={styles.settings_card} >
           <View style={{alignItems: 'left', paddingTop: 30, paddingLeft: 20}}>
             <Text style={styles.blue_settings}># of days on Ducky: {daysOnDucky}</Text>
-            <Text style={styles.blue_settings}># of days habits tracked: {daysHabit}</Text>
+            {/* <Text style={styles.blue_settings}># of days habits tracked: {daysHabit}</Text> */}
             <Text style={styles.blue_settings}># of days journaled: {daysOnJournal}</Text>
-            <Text style={styles.blue_settings}># of points: {totalPoints}</Text>
+            {/* <Text style={styles.blue_settings}># of points: {totalPoints}</Text> */}
           </View>
         </LinearGradient>
 

@@ -20,15 +20,15 @@ var config = {
     messagingSenderId: "1096270328273"
 };
 
-var expEntry = "Had a fun day today, went out with friends, enjoyed my time.";
+// var expEntry = "Had a fun day today, went out with friends, enjoyed my time.";
 
-var state = {
-  date: '',
-  time: '',
-  entryTitle: '',
-  entry: '',
-  tags: '',
-}
+// var state = {
+//   date: '',
+//   time: '',
+//   entryTitle: '',
+//   entry: '',
+//   tags: '',
+// }
 
 export class JournalEntry extends Component {
 
@@ -123,7 +123,7 @@ export class JournalEntry extends Component {
 
     //set entry state here
     // CHANGE: expEntry to text put into the journal entry
-    this.setState({entry: expEntry});
+    // this.setState({entry: expEntry});
 
     // CHANGE: hardcoded now
     this.setState({entryTitle: "New Entry"});
@@ -159,6 +159,7 @@ export class JournalEntry extends Component {
             console.log(error);
         });
     }, 10000);
+
     // change this depending on how quickly you want it processed
 
 

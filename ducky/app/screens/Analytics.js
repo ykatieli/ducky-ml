@@ -9,8 +9,51 @@ import InputScrollView from 'react-native-input-scroll-view';
 import styles from '../Styles';
 import Dock from '../components/Dock';
 
+import firebase from 'firebase';
+
+var config = {
+  apiKey: "AIzaSyCeTrtwF_hjGoHeZZlYOYI1CpxbKuW7twg",
+  authDomain: "ducky-ml.firebaseapp.com",
+  databaseURL: "https://ducky-ml.firebaseio.com",
+  projectId: "ducky-ml",
+  storageBucket: "ducky-ml.appspot.com",
+  messagingSenderId: "1096270328273"
+};
+
+var name;
+var daysOnDucky;
+var numJournalEntries;
+
+if (!firebase.apps.length){
+  firebase.initializeApp(config);
+
+}
+
+var database = firebase.database();
+
+database.ref('/users/haylee/acctInfo/recent/daysOnDucky').once('value', function(snapshot){
+  daysOnDucky = snapshot.val()
+});
+
+database.ref('/users/haylee/acctInfo/recent/daysOnJournal').once('value', function(snapshot){
+  console.log(snapshot.val());
+  numJournalEntries = snapshot.val()
+});
+
+database.ref('/users/haylee/acctInfo/recent/Name').once('value', function(snapshot){
+  console.log(snapshot.val());
+  name = snapshot.val()
+});
+
 export class Analytics extends Component {
   render() {
+
+    database.ref('/users/haylee/acctInfo/recent/Name').once('value', function(snapshot){
+      console.log(snapshot.val());
+      name = snapshot.val()
+    });
+
+
     return (
     
     <LinearGradient style={styles.container} colors={['#6B8DB2', '#7998B9']}>
@@ -20,7 +63,7 @@ export class Analytics extends Component {
           <View>
             <Text style={styles.white_45}>Hi,</Text>
             <Text>
-              <Text style={styles.yellow_45}>Haley</Text>
+              <Text style={styles.yellow_45}>{name}</Text>
               <Text style={styles.white_45}>!</Text>
             </Text>
           </View>
@@ -70,11 +113,11 @@ export class Analytics extends Component {
           {/* Stats */}
           <View style={{flexDirection: 'row', paddingLeft: 30, paddingRight: 30, alignContent: 'center', }}>
             <View style={styles.analytics_halfcard}>
-              <Text style={styles.yellow_75}>31</Text>
+              <Text style={styles.yellow_75}>{daysOnDucky}</Text>
               <Text style={{color: '#f9e067', fontSize: 20, fontStyle: 'italic'}}>days on Ducky</Text>
             </View>
             <View style={styles.analytics_halfcard}>
-              <Text style={styles.yellow_75}>8</Text>
+              <Text style={styles.yellow_75}>{numJournalEntries}</Text>
               <Text style={{color: '#f9e067', fontSize: 20, fontStyle: 'italic'}}>journal entries</Text>
             </View>
           </View>

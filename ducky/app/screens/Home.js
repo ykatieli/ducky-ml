@@ -9,9 +9,37 @@ import styles from '../Styles';
 import Dock from '../components/Dock';
 import Account from '../components/Account';
 
-export class Home extends Component {
+import firebase from 'firebase';
 
+var config = {
+  apiKey: "AIzaSyCeTrtwF_hjGoHeZZlYOYI1CpxbKuW7twg",
+  authDomain: "ducky-ml.firebaseapp.com",
+  databaseURL: "https://ducky-ml.firebaseio.com",
+  projectId: "ducky-ml",
+  storageBucket: "ducky-ml.appspot.com",
+  messagingSenderId: "1096270328273"
+};
+
+var name;
+
+if (!firebase.apps.length){
+  firebase.initializeApp(config);
+
+}
+
+var database = firebase.database();
+
+database.ref('/users/haylee/acctInfo/recent/Name').once('value', function(snapshot){
+  name = snapshot.val()
+});
+
+
+export class Home extends Component {
   render() {
+    database.ref('/users/haylee/acctInfo/recent/Name').once('value', function(snapshot){
+      name = snapshot.val()
+    });
+
     return (
       <LinearGradient colors={['#AEC9EB', 'rgba(174, 201, 235, 0.75)']} style={styles.container}>
 
@@ -23,7 +51,7 @@ export class Home extends Component {
           <Text style={styles.white_45}>Good</Text>
           <Text style={styles.white_45}>morning,</Text>
           <Text>
-            <Text style={styles.yellow_45}>Haley</Text>
+            <Text style={styles.yellow_45}>{name}</Text>
             <Text style={styles.white_45}>!</Text>
           </Text>
         </View>
