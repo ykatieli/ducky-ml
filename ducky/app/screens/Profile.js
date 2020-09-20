@@ -73,7 +73,7 @@ export class Profile extends Component {
         </View>
 
         <View style={{alignItems: 'center', paddingTop: 10}}>
-        <Image style={styles.profile} source = {require('../../assets/profile.png')}></Image>
+        <Image style={styles.profile} source = {require('../../assets/logo.png')}></Image>
         </View>
 
         <View style={{alignItems: 'center', paddingTop: 10}}>
