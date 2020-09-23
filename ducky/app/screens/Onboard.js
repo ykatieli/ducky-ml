@@ -17,7 +17,7 @@ export class Onboard extends Component {
         <Image style={[styles.ducky_logo, {width: 200, height: 200}]} source = {require('../../assets/logo.png')}></Image>
         <Text style={[styles.white_40, {paddingTop: 30}]}>Welcome to Ducky!</Text>
         {/* Onboard */}
-        <LinearGradient colors={['#ffffff', '#fbfbfb']} style={styles.onboard_card} >
+        <LinearGradient colors={['#ffffff', '#fbfbfb']} style={[styles.onboard_card, {marginTop: 50}]} >
             <View style={{alignItems: 'center', paddingTop:10}} onPress={() => this.props.navigation.navigate('NameScreen')}>
               <Text style={[styles.blue_settings, {alignContent: 'center', justifyContent: 'center'}]} onPress={() => this.props.navigation.navigate('NameScreen')}>Let's get started</Text>
             </View>

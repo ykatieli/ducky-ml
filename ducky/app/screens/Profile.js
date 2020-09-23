@@ -65,88 +65,90 @@ export class Profile extends Component {
       // <ScrollView style={styles.scrollView}>
       
       <LinearGradient colors={['#aec9eb', 'rgba(174, 201, 235, 0.75)']} style={styles.container}>
-      <InputScrollView>
+        <InputScrollView>
       
-        {/* Introduction */}
-        <View style={{alignItems: 'center', paddingTop: 0}}>
-        <Text style={styles.white_40}>Profile</Text>
-        </View>
-
-        <View style={{alignItems: 'center', paddingTop: 10}}>
-        <Image style={styles.profile} source = {require('../../assets/logo.png')}></Image>
-        </View>
-
-        <View style={{alignItems: 'center', paddingTop: 10}}>
-        <Text style={styles.white_20}>{name}</Text>
-        <Text style={styles.white_12}>{id} </Text>
-        </View>
-
-      {/* Stats */}
-        <LinearGradient colors={['#ffffff', '#fbfbfb']} style={styles.settings_card} >
-          <View style={{alignItems: 'left', paddingTop: 30, paddingLeft: 20}}>
-            <Text style={styles.blue_settings}># of days on Ducky: {daysOnDucky}</Text>
-            {/* <Text style={styles.blue_settings}># of days habits tracked: {daysHabit}</Text> */}
-            <Text style={styles.blue_settings}># of days journaled: {daysOnJournal}</Text>
-            {/* <Text style={styles.blue_settings}># of points: {totalPoints}</Text> */}
+          {/* Introduction */}
+          <View style={{alignItems: 'center', paddingTop: 0}}>
+            <Text style={styles.white_40}>Profile</Text>
           </View>
-        </LinearGradient>
 
-        <View style={{alignItems: 'left', paddingTop: 20, paddingLeft: 30}}>
-          <Text style={styles.white_30}>Settings</Text>
-        </View>
+          <View style={{alignItems: 'center', paddingTop: 10}}>
+            <Image style={styles.profile} source = {require('../../assets/logo.png')}></Image>
+          </View>
 
-        {/* Cards */}
-        <View style={{paddingTop: 0,flexDirection: 'column', justifyContent: 'center'}}>
+          <View style={{alignItems: 'center', paddingTop: 10}}>
+            <Text style={styles.white_20}>{name}</Text>
+            <Text style={styles.white_12}>{id} </Text>
+          </View>
+
+          {/* Stats */}
+          <LinearGradient colors={['#ffffff', '#fbfbfb']} style={styles.settings_card} >
+            <View style={{alignItems: 'left', paddingTop: 30, paddingLeft: 20}}>
+              <Text style={styles.blue_settings}># of days on Ducky: {daysOnDucky}</Text>
+              {/* <Text style={styles.blue_settings}># of days habits tracked: {daysHabit}</Text> */}
+              <Text style={styles.blue_settings}># of days journaled: {daysOnJournal}</Text>
+              {/* <Text style={styles.blue_settings}># of points: {totalPoints}</Text> */}
+            </View>
+          </LinearGradient>
+
+          <View style={{paddingTop: 0,flexDirection: 'column', justifyContent: 'center'}}>
         
-          {/* Settings  */}
-          <LinearGradient colors={['#ffffff', '#fbfbfb']} style={styles.settings_card} >
-            <View style={{alignItems: 'left', paddingTop: 30, paddingLeft: 20}}>
-              <Text style={styles.blue_settings} onPress={() => this.props.navigation.navigate('AccountInfoScreen')}>Account</Text>
-              <Text style={styles.blue_settings} onPress={() => this.props.navigation.navigate('DataScreen')}>Data</Text>
-              <Text style={styles.blue_settings} onPress={() => this.props.navigation.navigate('NotificationsScreen')}>Notifications</Text>
-              <Text style={styles.blue_settings} onPress={() => this.props.navigation.navigate('PrivacyScreen')}>Privacy Settings</Text>
-              <Text style={styles.blue_settings} onPress={() => this.props.navigation.navigate('TrackerScreen')}>Tracker Settings</Text>
+            <View style={{alignItems: 'left', paddingTop: 20, paddingLeft: 30}}>
+              <Text style={styles.white_30}>Settings</Text>
             </View>
-          </LinearGradient>
+            {/* Settings  */}
+            <LinearGradient colors={['#ffffff', '#fbfbfb']} style={styles.settings_card} >
+              <View style={{alignItems: 'left', paddingTop: 30, paddingLeft: 20}}>
+                <Text style={[styles.blue_settings, {textDecorationLine: 'underline'}]} onPress={() => this.props.navigation.navigate('AccountInfoScreen')}>Account</Text>
+                <Text style={[styles.blue_settings, {textDecorationLine: 'underline'}]} onPress={() => this.props.navigation.navigate('DataScreen')}>Data</Text>
+                <Text style={[styles.blue_settings, {textDecorationLine: 'underline'}]} onPress={() => this.props.navigation.navigate('NotificationsScreen')}>Notifications</Text>
+                <Text style={[styles.blue_settings, {textDecorationLine: 'underline'}]} onPress={() => this.props.navigation.navigate('PrivacyScreen')}>Privacy Settings</Text>
+                <Text style={[styles.blue_settings, {textDecorationLine: 'underline'}]} onPress={() => this.props.navigation.navigate('TrackerScreen')}>Tracker Settings</Text>
+              </View>
+            </LinearGradient>
 
-        <View style={{alignItems: 'left', paddingTop: 20, paddingLeft: 30}}>
-          <Text style={styles.white_30}>Premium</Text>
-        </View>
-          <LinearGradient colors={['#ffffff', '#fbfbfb']} style={styles.settings_card} >
-            <View style={{alignItems: 'left', paddingTop: 30, paddingLeft: 20}}>
-              <Text style={styles.blue_settings}>Online Backup</Text>
-              <Text style={styles.blue_settings}>Restore Purchases</Text>
-              <Text style={styles.blue_settings}>Remove Ads</Text>
-              <Text style={styles.blue_settings}>Shop</Text>
+            {/* Premium */}
+            <View style={{alignItems: 'left', paddingTop: 20, paddingLeft: 30}}>
+              <Text style={styles.white_30}>Premium</Text>
             </View>
-          </LinearGradient>
+            <LinearGradient colors={['#ffffff', '#fbfbfb']} style={styles.settings_card} >
+              <View style={{alignItems: 'left', paddingTop: 30, paddingLeft: 20}}>
+                <Text style={styles.blue_settings}>Online Backup</Text>
+                <Text style={styles.blue_settings}>Restore Purchases</Text>
+                <Text style={styles.blue_settings}>Remove Ads</Text>
+                <Text style={styles.blue_settings}>Shop</Text>
+              </View>
+            </LinearGradient>
 
-        <View style={{alignItems: 'left', paddingTop: 20, paddingLeft: 30}}>
-          <Text style={styles.white_30}>Other</Text>
-        </View>
-          <LinearGradient colors={['#ffffff', '#fbfbfb']} style={styles.settings_card} >
-            <View style={{alignItems: 'left', paddingTop: 30, paddingLeft: 20}}>
-              <Text style={styles.blue_settings}>Version</Text>
-              <Text style={styles.blue_settings}>FAQ & User Support</Text>
-              <Text style={styles.blue_settings}>Rate Ducky</Text>
-              <Text style={styles.blue_settings}>Follow Us</Text>
+            {/* Other */}
+            <View style={{alignItems: 'left', paddingTop: 20, paddingLeft: 30}}>
+              <Text style={styles.white_30}>Other</Text>
             </View>
-          </LinearGradient>  
+            <LinearGradient colors={['#ffffff', '#fbfbfb']} style={styles.settings_card} >
+              <View style={{alignItems: 'left', paddingTop: 30, paddingLeft: 20}}>
+                <Text style={styles.blue_settings}>Version</Text>
+                <Text style={styles.blue_settings}>FAQ & User Support</Text>
+                <Text style={styles.blue_settings}>Rate Ducky</Text>
+                <Text style={styles.blue_settings}>Follow Us</Text>
+              </View>
+            </LinearGradient>  
 
-        <View style={{alignItems: 'left', paddingTop: 20, paddingLeft: 30}}>
-          <Text style={styles.white_30}>Disclaimer</Text>
-        </View>
-        <View style={{alignItems: 'left', paddingTop: 20, paddingLeft: 30}}>
-          <Text style={styles.blue_15}>Ducky is not meant to be used as therapy or in place of professional medical guidance. The developer team is not, in any way, claiming to be medical experts.</Text>
-        </View>
+            {/* Disclaimer */}
+            <View style={{alignItems: 'left', paddingTop: 20, paddingLeft: 30}}>
+              <Text style={styles.white_30}>Disclaimer</Text>
+            </View>
+            <LinearGradient colors={['#ffffff', '#fbfbfb']} style={styles.settings_card} >
+              <View style={{paddingTop: 30, paddingLeft: 20, paddingRight: 20}}>
+                <Text style={styles.blue_15}>Ducky is not meant to be used as therapy or in place of professional medical guidance. The developer team is not, in any way, claiming to be medical experts.</Text>
+              </View>
+            </LinearGradient>
 
-        <LinearGradient colors={['#ffffff', '#fbfbfb']} style={styles.settings_card} >
-          <View style={{alignItems: 'left', paddingTop: 10, paddingLeft: 20}}>
-          </View>
-        </LinearGradient>
+        <View style={{paddingBottom:100}}></View>
 
         </View>
         </InputScrollView>
+
+        
 
         {/* Dock */}
         <Dock navigation={this.props.navigation}/>

@@ -1,7 +1,7 @@
 // JournalEntry.js
 
 import React, { Component, useState, useEffect, useRef } from 'react';
-import { View, Text, TextInput, Keyboard, TouchableWithoutFeedback, Button, Alert} from 'react-native';
+import { View, Text, TextInput, Keyboard, TouchableWithoutFeedback, Button, Alert, SafeAreaView, KeyboardAvoidingView, ScrollView} from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import { AntDesign, Feather, MaterialCommunityIcons, FontAwesome, Ionicons, Entypo, MaterialIcons } from '@expo/vector-icons';
 import InputScrollView from 'react-native-input-scroll-view';
@@ -48,9 +48,9 @@ export class JournalEntry extends Component {
     this.handleEntryTitle = this.handleEntryTitle.bind(this);
     this.handleEntry = this.handleEntry.bind(this);
     this.handleTags = this.handleTags.bind(this);
-    this.setMoodHappy = this.setMoodHappy.bind(this);
-    this.setMoodNeutral = this.setMoodNeutral.bind(this);
-    this.setMoodSad = this.setMoodSad.bind(this);
+    // this.setMoodHappy = this.setMoodHappy.bind(this);
+    // this.setMoodNeutral = this.setMoodNeutral.bind(this);
+    // this.setMoodSad = this.setMoodSad.bind(this);
     this.createEntry = this.createEntry.bind(this);
   }
 
@@ -254,15 +254,15 @@ export class JournalEntry extends Component {
     this.setState({ tags: text });
   }
 
-  setMoodHappy = () => {
-    this.setState({mood: 'happy'})
-  }
-  setMoodNeutral = () => {
-    this.setState({mood: 'neutral'})
-  }
-  setMoodSad = () => {
-    this.setState({mood: 'sad'})
-  }
+  // setMoodHappy = () => {
+  //   this.setState({mood: 'happy'})
+  // }
+  // setMoodNeutral = () => {
+  //   this.setState({mood: 'neutral'})
+  // }
+  // setMoodSad = () => {
+  //   this.setState({mood: 'sad'})
+  // }
 
   createEntry = (event) => {
     Alert.alert(`Created "${this.state.entryTitle}"`, `on ${this.state.date} at ${this.state.time}`, "Hello")
@@ -270,8 +270,8 @@ export class JournalEntry extends Component {
   }
 
   render() {
-    return (
 
+    return (
       <TouchableWithoutFeedback onPress={()=>Keyboard.dismiss() }>
         <LinearGradient colors={['#6B8DB2', '#7998B9']} style={styles.container}>
           
@@ -308,9 +308,12 @@ export class JournalEntry extends Component {
           </View> */}
 
           {/* Text Space */}
-          <View style={styles.corner_card} >
-            <View style={{padding: 30}}>
-              <InputScrollView>
+          <View style={[styles.corner_card, {paddingLeft: 30, paddingRight: 30, paddingTop:30}]} >
+          <ScrollView keyboardDismissMode='on-drag'>
+            {/* <KeyboardShift >
+            { () => ( */}
+            <KeyboardAvoidingView>
+            <View >
               <TextInput 
                 style = {[styles.blue_18, { height: Math.min(490, Math.max(500, this.state.height))}]}
                 placeholder = "Begin entry here..."
@@ -322,18 +325,23 @@ export class JournalEntry extends Component {
                 }
                 onChangeText = {this.handleEntry}
               />   
-              </InputScrollView>
+              
             </View>
+            {/* )}
+            </KeyboardShift> */}
+            </KeyboardAvoidingView>
+            </ScrollView>
           </View>
 
           {/* Bottom Bar */}
           <View>
-            <KeyboardShift>
-              { () => (
+            {/* <KeyboardShift> */}
+              {/* { () => ( */}
                 <View style={styles.bottom_bar}>
                   {/* Tags */}
-                  <View style={{ flexDirection: 'row', alignItems: 'center' }}>
-                    <Text style={styles.blue_20}>Tags:</Text>
+                  <View style={{ flexDirection: 'row', alignItems: 'center', alignItems: 'center', justifyContent: 'space-between', position: 'absolute', right: 30 }}>
+                    {/* <View>
+                      <Text style={styles.blue_20}>Tags:</Text>
                       <View style={{marginLeft: 10}}>
                         <TextInput style = {styles.blue_15}
                           placeholder = "#"
@@ -342,24 +350,25 @@ export class JournalEntry extends Component {
                           onChangeText = {this.handleTags}
                         />
                       </View>
+                    </View> */}
+                     {/* Create Entry Button */}
+                     <View style={styles.button_entry}>
+                      <Button title="Create Entry"  onPress={this.createEntry} color="#FBFBFB"/>
+                      {/* Change this so that when we press this button, we update all states, then call the database update */}
+                    </View>
                   </View>
                   {/* Mood and Create Entry */}
-                  <View style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', paddingRight: 20 }}>
+                  {/* <View style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', paddingRight: 20 }}>
                     <Text style={styles.blue_20}>Mood:</Text>
                     <View style={{ flexDirection: 'row', width: 150, justifyContent: 'space-evenly' }}>
                       <MaterialIcons name="sentiment-satisfied" size={25} color="#f9e067" onPress={this.setMoodHappy}/>
                       <MaterialIcons name="sentiment-neutral" size={25} color="#f9e067" onPress={this.setMoodNeutral} />
                       <MaterialIcons name="sentiment-dissatisfied" size={25} color="#f9e067" onPress={this.setMoodSad}/>
                     </View>
-                    {/* Create Entry Button */}
-                    <View style={styles.button_entry}>
-                      <Button title="Create Entry"  onPress={this.createEntry} color="#FBFBFB"/>
-                      {/* Change this so that when we press this button, we update all states, then call the database update */}
-                    </View>
-                  </View> 
+                  </View>  */}
                 </View>
-              )}
-            </KeyboardShift>
+              {/* )} */}
+            {/* </KeyboardShift> */}
           </View>          
 
           {/* Dock */}

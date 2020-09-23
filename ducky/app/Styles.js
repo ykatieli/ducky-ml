@@ -156,6 +156,19 @@ const styles = StyleSheet.create({
     width: 150,
     height: 150,
   },
+  name_curve: {
+    backgroundColor: '#6B8DB2',
+    width: 600,
+    height: 700,
+    borderTopLeftRadius: 108,
+    borderTopRightRadius: 108,
+    borderBottomLeftRadius: 20,
+    borderBottomRightRadius: 1000,
+    zIndex: -10,
+    position: 'absolute',
+    top: -150,
+    right: -100,
+  },
   //// Home
   cards: {
     width: 300,
@@ -166,19 +179,21 @@ const styles = StyleSheet.create({
   //// Settings
   settings_card: {
     width: 364,
-    height: 230,
+    // height: 230,
     borderRadius: 20,
     paddingTop: 0,
     paddingLeft: 0,
+    paddingBottom: 30,
     margin: 25,
   },
   account_card: {
     width: 364,
-    height: 400,
+    // height: 400,
     borderRadius: 20,
     paddingTop: 0,
     paddingLeft: 0,
     margin: 25,
+    paddingBottom: 30,
   },
   profile: {
     width: 100,
@@ -243,7 +258,7 @@ const styles = StyleSheet.create({
     borderTopWidth: 1,
     borderTopColor: 'rgba(196, 196, 196, 0.25)',
     width: 432,
-    height: 90,
+    height: 75,
     position: 'absolute',
     bottom: 0,
     paddingLeft: 30,

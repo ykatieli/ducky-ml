@@ -23,7 +23,7 @@ export class Journal extends Component {
         </View>
 
         <View style={styles.header}>
-          <Text style={styles.white_40}>Journals</Text>
+          <Text style={styles.white_40}>Journal</Text>
         </View>
         
         {/* Add entry and Search */}
@@ -44,28 +44,28 @@ export class Journal extends Component {
         </View> */}
 
         {/* Journal Cards */}
-        <View style={{paddingTop: 20, paddingLeft: 20, display: 'flex', flexDirection: 'row',}}>
+        {/* <View style={{paddingTop: 20, paddingLeft: 20, display: 'flex', flexDirection: 'row',}}> */}
           {/* Journal #1: current journal */}
-          <LinearGradient colors={['#FFF3C1', '#F9E076']} style={styles.journal_cards}>
+          {/* <LinearGradient colors={['#FFF3C1', '#F9E076']} style={styles.journal_cards}>
             <View>
               <Text style={styles.white_25}>Journal #1</Text>
             </View>
-          </LinearGradient>
+          </LinearGradient> */}
 
           {/* Journal #2 */}
-          <LinearGradient colors={['#ffffff', '#fbfbfb']} style={styles.journal_cards}>
+          {/* <LinearGradient colors={['#ffffff', '#fbfbfb']} style={styles.journal_cards}>
             <View>
               <Text style={styles.blue_25}>Journal #2</Text>
             </View>
-          </LinearGradient>
+          </LinearGradient> */}
 
           {/* Add new journal */}
-          <LinearGradient colors={['#ffffff', '#fbfbfb']} style={styles.journal_cards}>
+          {/* <LinearGradient colors={['#ffffff', '#fbfbfb']} style={styles.journal_cards}>
             <View>
               <Ionicons name="ios-add-circle" size={50} color="#6B8DB2" />
             </View>
           </LinearGradient>
-        </View>
+        </View> */}
 
         {/* Entries */}
         <View style={{paddingTop: 30, paddingLeft: 30}}>
@@ -73,9 +73,9 @@ export class Journal extends Component {
           {/* Entry #1 */}
           <View style={styles.journal_entry}>
             {/* Mood */}
-            <View style={{width: 30, height: 30, borderRadius: 100, backgroundColor: '#ffffff', alignItems: 'center', justifyContent: 'center'}}>
+            {/* <View style={{width: 30, height: 30, borderRadius: 100, backgroundColor: '#ffffff', alignItems: 'center', justifyContent: 'center'}}>
               <MaterialIcons name="sentiment-satisfied" size={25} color="#f9e067" />
-            </View>
+            </View> */}
 
             {/* Time and Date */}
             <View style={{paddingLeft: 10}}>

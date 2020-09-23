@@ -33,8 +33,39 @@ database.ref('/users/haylee/acctInfo/recent/Name').once('value', function(snapsh
   name = snapshot.val()
 });
 
-
 export class Home extends Component {
+
+  constructor() {
+    super();
+
+    this.state = {
+      greeting: '',
+    }
+  }
+
+  componentDidMount() {
+    var hours = new Date().getHours();
+    var min = new Date().getMinutes();
+
+    // set greeting
+    // morning: 5:00 am - 11:59 am
+    if (hours >= 5 && hours < 12) {
+      this.setState({greeting: 'morning'});
+    }
+    // afternoon: 12:00 pm - 4:59 pm
+    else if (hours >= 12 && hours < 17) {
+      this.setState({greeting: 'afternoon'});
+    }
+    // evening: 5:00 pm - 8:59 pm
+    else if (hours >= 17 && hours < 21) {
+      this.setState({greeting: 'evening'});
+    }
+    // night: 9:00 pm - 4:59 am
+    else {
+      this.setState({greeting: 'night'});
+    }
+  }
+
   render() {
     database.ref('/users/haylee/acctInfo/recent/Name').once('value', function(snapshot){
       name = snapshot.val()
@@ -49,7 +80,7 @@ export class Home extends Component {
         {/* Good morning, Haley! */}
         <View style={{paddingLeft: 30}}>
           <Text style={styles.white_45}>Good</Text>
-          <Text style={styles.white_45}>morning,</Text>
+          <Text style={styles.white_45}>{this.state.greeting},</Text>
           <Text>
             <Text style={styles.yellow_45}>{name}</Text>
             <Text style={styles.white_45}>!</Text>

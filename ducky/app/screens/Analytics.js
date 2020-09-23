@@ -46,6 +46,67 @@ database.ref('/users/haylee/acctInfo/recent/Name').once('value', function(snapsh
 });
 
 export class Analytics extends Component {
+
+  constructor() {
+    super();
+
+    this.state = {
+      month: '',
+      year: '',
+    }
+  }
+
+  componentDidMount() {
+    var month = new Date().getMonth() + 1;
+    var year = new Date().getFullYear();
+
+    var fullMonth;
+
+    switch (month) {
+      case 1:
+        fullMonth = 'January';
+        break;
+      case 2:
+        fullMonth = 'February';
+        break;
+      case 3:
+        fullMonth = 'March';
+        break;
+      case 4:
+        fullMonth = 'April';
+        break;
+      case 5:
+        fullMonth = 'May';
+        break;
+      case 6:
+        fullMonth = 'June';
+        break;
+      case 7:
+        fullMonth = 'July';
+        break;
+      case 8:
+        fullMonth = 'August';
+        break;
+      case 9:
+        fullMonth = 'September';
+        break;
+      case 10:
+        fullMonth = 'October';
+        break;
+      case 11:
+        fullMonth = 'November';
+        break;
+      case 12:
+        fullMonth = 'December';
+        break;
+      default:
+        fullMonth = 'Error';
+    }
+
+    this.setState({month: fullMonth});
+    this.setState({year: year});
+  }
+
   render() {
 
     database.ref('/users/haylee/acctInfo/recent/Name').once('value', function(snapshot){
@@ -79,8 +140,8 @@ export class Analytics extends Component {
             <Ionicons name="ios-arrow-back" size={25} color="#fbfbfb" />
           </View>
           <Text style={{fontSize: 25, color: '#ffffff', fontWeight: 'bold'}}>
-            <Text style={{paddingRight: 20}}>Month </Text>
-            <Text>Year</Text>
+            <Text style={{paddingRight: 20}}>{this.state.month} </Text>
+            <Text>{this.state.year}</Text>
           </Text> 
           <View style={{paddingLeft: 30}}>
             <Ionicons name="ios-arrow-forward" size={25} color="#fbfbfb" /> 
@@ -126,6 +187,8 @@ export class Analytics extends Component {
           <View style={{alignContent: 'center', justifyContent: 'center', paddingTop: 30}}>
             <Text style={{color: '#fbfbfb', fontSize: 15, fontStyle: 'italic'}}>Keep going, you're doing great! :-)</Text>
           </View>
+          
+          <View style={{paddingBottom: 150}}></View>
 
         </View>
        

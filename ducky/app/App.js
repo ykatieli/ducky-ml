@@ -47,7 +47,7 @@ function App() {
     <NavigationContainer>
         <Stack.Navigator 
         initialRouteName="Home"
-        screenOptions={{ headerShown: false}}>
+        screenOptions={{ headerShown: false, animationEnabled: false, headerBackground: '#713589'}}>
         <Stack.Screen
           name="OnboardScreen"
           component={Onboard}

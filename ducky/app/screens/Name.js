@@ -60,6 +60,8 @@ export class Name extends Component {
       <LinearGradient colors={['#aec9eb', 'rgba(174, 201, 235, 0.75)']} style={styles.container}>
         <SafeAreaView>
 
+        <View style={styles.name_curve}></View> 
+
         {/* Question */}
         <View style={{alignItems: 'center', paddingTop: 150}}>
         <Text style={[styles.white_40, {paddingBottom: 30}]}>What is your preferred name?</Text>
@@ -73,12 +75,14 @@ export class Name extends Component {
             onChangeText = {this.handleName}
           />
         </View>
+        
+        <View style={{paddingBottom: 230}}></View>
 
-        <LinearGradient colors={['#ffffff', '#fbfbfb']} style={styles.onboard_card} >
-            <View style={{alignItems: 'center', paddingTop:10}} onPress={() => this.props.navigation.navigate('HomeScreen')}>
-              <Text style={styles.blue_settings} onPress={() => this.props.navigation.navigate('HomeScreen')}>Continue</Text>
-            </View>
-          </LinearGradient>
+        <LinearGradient colors={['#ffffff', '#fbfbfb']} style={{width: 300, height: 50, borderRadius: 20}} >
+          <View style={{alignItems: 'center', justifyContent: 'center', paddingTop:10}} onPress={() => this.props.navigation.navigate('HomeScreen')}>
+            <Text style={styles.blue_settings} onPress={() => this.props.navigation.navigate('HomeScreen')}>Continue</Text>
+          </View>
+        </LinearGradient>
         </View>
 
         </SafeAreaView>
