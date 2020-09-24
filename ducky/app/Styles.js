@@ -245,6 +245,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     paddingLeft: 20,
+    marginBottom: 10,
   },
   corner_card: {
     backgroundColor: '#fbfbfb',

@@ -24,6 +24,7 @@ import Privacy from './screens/Privacy';
 import Tracker from './screens/Tracker';
 import Dock from './components/Dock';
 import Account from './components/Account';
+import JournalEntryExample from './screens/JournalEntryExample';
 
 // for Muli font: expo install @expo-google-fonts/muli expo-font
 import { AppLoading } from 'expo';
@@ -103,6 +104,10 @@ function App() {
         <Stack.Screen
           name="TrackerScreen"
           component={Tracker}
+        />
+        <Stack.Screen
+          name="JournalEntryExampleScreen"
+          component={JournalEntryExample}
         />
       </Stack.Navigator>
     </NavigationContainer>

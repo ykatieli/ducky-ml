@@ -1,7 +1,7 @@
 // Journal.js
 
 import React, { Component } from 'react';
-import { View, Text, Button } from 'react-native';
+import { View, Text, SafeAreaView, ScrollView } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import { AntDesign, Feather, MaterialCommunityIcons, FontAwesome, Ionicons, Entypo, MaterialIcons } from '@expo/vector-icons';
 
@@ -11,6 +11,7 @@ import Dock from '../components/Dock';
 export class Journal extends Component {
   render() {
     return (
+      
       <LinearGradient colors={['#aec9eb', 'rgba(174, 201, 235, 0.75)']} style={styles.container}>
 
         <View style={styles.top_right}>
@@ -22,6 +23,7 @@ export class Journal extends Component {
            <Ionicons name="ios-add-circle" size={35} color="#ffffff" onPress={() => this.props.navigation.navigate('JournalEntryScreen')}/>
         </View>
 
+        <ScrollView>
         <View style={styles.header}>
           <Text style={styles.white_40}>Journal</Text>
         </View>
@@ -79,24 +81,161 @@ export class Journal extends Component {
 
             {/* Time and Date */}
             <View style={{paddingLeft: 10}}>
-              <Text style={styles.white_12}>Time</Text>
-              <Text style={styles.white_15}>Date</Text>
+              <Text style={styles.white_12}>8:39 pm</Text>
+              <Text style={styles.white_15}>Sept 22</Text>
+            </View>
+
+            {/* Journal Entry Title */}
+            <View style={{paddingLeft: 20}} onPress={() => this.props.navigation.navigate('JournalEntryExampleScreen')}>
+              <Text style={{fontSize: 20, color: '#ffffff'}} onPress={() => this.props.navigation.navigate('JournalEntryExampleScreen')}>i'm stressed i want a job</Text>
+            </View>
+          </View>
+
+          {/* Entry #2 */}
+          <View style={styles.journal_entry}>
+
+            {/* Time and Date */}
+            <View style={{paddingLeft: 10}}>
+              <Text style={styles.white_12}>11:21 pm</Text>
+              <Text style={styles.white_15}>Sept 21</Text>
             </View>
 
             {/* Journal Entry Title */}
             <View style={{paddingLeft: 20}}>
-              <Text style={{fontSize: 20, color: '#ffffff'}}>entry #1 title</Text>
+              <Text style={{fontSize: 20, color: '#ffffff'}}>a genuinely good day :)</Text>
+            </View>
+          </View>
+
+          {/* Entry #3 */}
+          <View style={styles.journal_entry}>
+
+            {/* Time and Date */}
+            <View style={{paddingLeft: 10}}>
+              <Text style={styles.white_12}>8:30 am</Text>
+              <Text style={styles.white_15}>Sept 20</Text>
             </View>
 
+            {/* Journal Entry Title */}
+            <View style={{paddingLeft: 20}}>
+              <Text style={{fontSize: 20, color: '#ffffff'}}>goal: be healthier</Text>
+            </View>
+          </View>
+
+          {/* Entry #4 */}
+          <View style={styles.journal_entry}>
+
+            {/* Time and Date */}
+            <View style={{paddingLeft: 10}}>
+              <Text style={styles.white_12}>9:00 am</Text>
+              <Text style={styles.white_15}>Sept 19</Text>
+            </View>
+
+            {/* Journal Entry Title */}
+            <View style={{paddingLeft: 20}}>
+              <Text style={{fontSize: 20, color: '#ffffff'}}>new day, new me!</Text>
+            </View>
+          </View>
+
+          {/* Entry #5 */}
+          <View style={styles.journal_entry}>
+
+            {/* Time and Date */}
+            <View style={{paddingLeft: 10}}>
+              <Text style={styles.white_12}>9:00 pm</Text>
+              <Text style={styles.white_15}>Sept 18</Text>
+            </View>
+
+            {/* Journal Entry Title */}
+            <View style={{paddingLeft: 20}}>
+              <Text style={{fontSize: 20, color: '#ffffff'}}>i'm lonely</Text>
+            </View>
+          </View>
+
+          {/* Entry #6 */}
+          <View style={styles.journal_entry}>
+
+            {/* Time and Date */}
+            <View style={{paddingLeft: 10}}>
+              <Text style={styles.white_12}>6:20 pm</Text>
+              <Text style={styles.white_15}>Sept 17</Text>
+            </View>
+
+            {/* Journal Entry Title */}
+            <View style={{paddingLeft: 20}}>
+              <Text style={{fontSize: 20, color: '#ffffff'}}>i love my friends</Text>
+            </View>
+          </View>
+
+          {/* Entry #7 */}
+          <View style={styles.journal_entry}>
+
+            {/* Time and Date */}
+            <View style={{paddingLeft: 10}}>
+              <Text style={styles.white_12}>1:39 am</Text>
+              <Text style={styles.white_15}>Sept 16</Text>
+            </View>
+
+            {/* Journal Entry Title */}
+            <View style={{paddingLeft: 20}}>
+              <Text style={{fontSize: 20, color: '#ffffff'}}>what is life? who am i?</Text>
+            </View>
+          </View>
+
+          {/* Entry #8 */}
+          <View style={styles.journal_entry}>
+
+            {/* Time and Date */}
+            <View style={{paddingLeft: 10}}>
+              <Text style={styles.white_12}>10:00 am</Text>
+              <Text style={styles.white_15}>Sept 15</Text>
+            </View>
+
+            {/* Journal Entry Title */}
+            <View style={{paddingLeft: 20}}>
+              <Text style={{fontSize: 20, color: '#ffffff'}}>today is a busy day!</Text>
+            </View>
+          </View>
+
+          {/* Entry #9 */}
+          <View style={styles.journal_entry}>
+
+            {/* Time and Date */}
+            <View style={{paddingLeft: 10}}>
+              <Text style={styles.white_12}>3:45 pm</Text>
+              <Text style={styles.white_15}>Sept 14</Text>
+            </View>
+
+            {/* Journal Entry Title */}
+            <View style={{paddingLeft: 20}}>
+              <Text style={{fontSize: 20, color: '#ffffff'}}>school stress :(</Text>
+            </View>
+          </View>
+
+          {/* Entry #10 */}
+          <View style={styles.journal_entry}>
+
+            {/* Time and Date */}
+            <View style={{paddingLeft: 10}}>
+              <Text style={styles.white_12}>8:00 am</Text>
+              <Text style={styles.white_15}>Sept 13</Text>
+            </View>
+
+            {/* Journal Entry Title */}
+            <View style={{paddingLeft: 20}}>
+              <Text style={{fontSize: 20, color: '#ffffff'}}>last night's dream...</Text>
+            </View>
           </View>
 
         </View>
-        
+        </ScrollView>
+
+        <View style={{paddingBottom: 100}}></View>
         
         {/* Dock */}
         <Dock navigation={this.props.navigation}/>
 
       </LinearGradient>
+
     )
   }
 }
